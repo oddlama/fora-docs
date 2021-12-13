@@ -9,7 +9,7 @@
 
 ## Writing Deploys
 
-* [Page 1](writing-deploys/page-1.md)
+* [Basics](writing-deploys/basics.md)
 
 ## Examples
 
