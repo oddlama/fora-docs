@@ -2,6 +2,7 @@
 
 * [Getting Started](README.md)
 * [Features](features.md)
+* [FAQ](faq.md)
 
 ## Usage
 
