@@ -5,6 +5,7 @@
 ## Usage
 
 * [Getting Started](usage/getting-started.md)
+* [Features](usage/features.md)
 * [Untitled](usage/untitled/README.md)
   * [Page 1](usage/untitled/page-1/README.md)
     * [Page 2](usage/untitled/page-1/page-2/README.md)
