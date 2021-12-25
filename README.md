@@ -1,54 +1,35 @@
-# Fora
+# Getting Started
 
-This is a test.
+## What is Fora?
 
-Next line.
+Fora is an infrastructure and configuration management tool inspired by [Ansible](https://www.ansible.com) and [pyinfa](https://pyinfra.com). It can be used for machine provisioning and to configuration management. See [how it differs](usage/features.md) from existing tools.
 
-Long line. **Neque** porro <mark style="color:purple;">quisquam</mark> est qui dolorem ipsum quia dolor sit amet, consecteturNeque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur.
+## Installation & Quickstart
 
-### Heading 2
-
-* [x] Check
-* [ ] Nice
-
-{% hint style="info" %}
-Just some hint
-{% endhint %}
-
-{% hint style="danger" %}
-Some error
-
-* 1
-* 2
-* 3
-{% endhint %}
-
-> This is a quote
->
-> `code` in quote.
+You can install Fora with pip:
 
 ```
-// Some code
-void test();
+pip install fora
 ```
 
-<table><thead><tr><th>da</th><th data-type="number">23</th><th></th></tr></thead><tbody><tr><td>awdaw</td><td>2</td><td>fff</td></tr></tbody></table>
+With Fora, you create deploys, which are scripts that define in which state the remote host should be. These so-called operations are just functions that you call in a python script:
 
-{% tabs %}
-{% tab title="First Tab" %}
-tab1
-{% endtab %}
+```python
+from fora.operations import files, system
 
-{% tab title="Second Tab" %}
-tab2
-{% endtab %}
-{% endtabs %}
+files.directory(
+    name="Create a temporary directory",
+    path="/tmp/hello")
 
-<details>
+system.package(
+    name="Install neovim",
+    package="neovim")
+```
 
-<summary>Expandable</summary>
+These can then be executed against an inventory, or a specific remote host via SSH:
 
-Content in expandable
+```bash
+fora root@example.com deploy.py
+```
 
-</details>
-
+Fora can do a lot more than this, which you can learn in detail in the [Usage](usage/) section.
