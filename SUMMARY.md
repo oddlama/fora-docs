@@ -16,8 +16,11 @@
 
 ## Fora internals
 
-* [Inventories](fora-internals/inventories.md)
-* [Deploys](fora-internals/deploys.md)
-* [Operations](fora-internals/operations.md)
-* [Variables](fora-internals/variables.md)
+* [Deploys](fora-internals/deploys/README.md)
+  * [Hosts](fora-internals/deploys/hosts.md)
+  * [Groups](fora-internals/deploys/groups.md)
+  * [Inventories](fora-internals/deploys/inventories.md)
+  * [Scripts](fora-internals/deploys/scripts.md)
+  * [Variable Hierarchy](fora-internals/deploys/variables.md)
 * [Connectors](fora-internals/connectors.md)
+* [Operations](fora-internals/operations.md)
