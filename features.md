@@ -12,7 +12,7 @@ That being said, here is how Fora is different:
 
 ## Features
 
-🪶 **Lightweight.** With just `~2.6k` lines of code, Fora is tiny.
+🪶 **Lightweight.** With just `~2.6k` lines of code, Fora is really tiny.
 As a reference: pyinfra is around `~11.1k`, and ansible beyond `>62.0k` (measured with [cloc](https://github.com/AlDanial/cloc)).
 Fora focuses on being a tool to execute common operations on remote hosts. Not more, not less.
 It has no domain-specific-language and no complex logic.
