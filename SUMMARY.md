@@ -6,12 +6,13 @@
 
 ## Usage
 
-* [Inventories](usage/inventories.md)
-* [Writing deploys](usage/writing-deploys.md)
+* [Writing deploys](usage/writing-deploys/README.md)
+  * [Inventories](usage/writing-deploys/inventories.md)
 
 ## Examples
 
-* [Some example](examples/some-example.md)
+* [Deploy layouts](examples/deploy-layouts.md)
+* [Reusable scripts](examples/reusable-scripts.md)
 * [Using secrets](examples/using-secrets.md)
 
 ## Fora internals
