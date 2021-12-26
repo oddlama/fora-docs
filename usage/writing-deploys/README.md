@@ -1,73 +1,57 @@
 # Writing deploys
 
-A deploy is a directory containing your inventories, hosts, groups and scripts.
-Here is a short overview over these components:
+A deploy is a collection of several components:
 
-[**Inventory.**](TODO) A collection of hosts, against which your scripts are run. Single hostnames like `root@example.com` are valid inventories.
+* [**Inventories.**](TODO/) Collections of hosts, against which your scripts are run. Standalone hostnames like `root@example.com` are valid inventories.
+* [**Hosts.**](TODO/) Host definitions allow you to assign variables and groups to specific hosts.
+* [**Groups.**](TODO/) Hosts inherit the variables defined by the groups they belong to. All hosts implicitly belong to the `all` group, which can be used to define global variables.
+* [**Scripts.**](TODO/) Regular python scripts specifying what should be done on the remote hosts.
 
-[**Host.**](TODO) A remote host. Optionally associated with a module file, where you can assign variables and groups to this host.
-
-[**Group.**](TODO) A collection of hosts. All hosts in a group inherit variables defined by the group. All hosts implicitly belong to the `all` group for global variables.
-
-[**Script.**](TODO) A python script using predefined [operations](TODO) to define what should be run on the remote hosts.
-
-Fora always needs an inventory and a main script to run on each invocation:
-
-```
-fora <inventory>... <script>`
-```
+Fora always requires at least one inventory and a main script to run.
 
 ## Deploy structure
 
-While the specific deploy structure is up to you, we recommend the following layout:
+The deploy structure is very flexible. There are only two things to keep in mind:
 
+* The working directory of a script is always its containing folder, so relative paths will work as expected. There is no definite _root directory_ for a deploy.
+* Host and group definitions are always expected to be in the `hosts/` and `groups/` folders relative to the inventory file.
+
+While the specific layout is up to you, we recommend the following:
+
+{% tabs %}
+{% tab title="default.txt" %}
+```python
+deploy/
+  hosts/        # Host specific configuration
+  groups/       # Group specific configuration
+    |-- all.py        # Global variables
+  tasks/        # Reusable scripts for performing specific tasks
+    |-- nginx.py
+  files/        # Static configuration files uploaded via `files.upload()` 
+  templates/    # Templated configuration files uploaded via `files.template()`
+    |-- inventory.py  # A list of all managed hosts
+  |-- deploy.py     # The main deploy script
 ```
+{% endtab %}
+
+{% tab title="staging-production.txt" %}
+```python
 inventories/
-	hosts/
-		- example.py # host specific variables
-	groups/
-		- all.py         # global variables
-		- webservers.py  # variables for webservers
-		- production.py  # variables for production only
-    - production.py  # production inventory hosts
-    - staging.py     # staging inventory hosts
-tasks/  # reusable scripts performing specific tasks
-    - ssh.py
-	nginx/ # Could be an external repository
-		files/
-		templates/
-		- nginx.py
-files/     # Static files to upload via `files.upload()` not belonging to any task
-templates/ # Templates that are rendered and uploaded via `files.template()`
-- setup_server.py  # Initializer script containing one-off setup instructions
-- deploy.py        # Main deploy script that can be re-run to update configuration
+  hosts/        # Host specific configuration
+  groups/       # Group specific configuration
+    |-- all.py        # Global variables
+  |-- staging.py      # All staging hosts
+  |-- production.py   # All production hosts
+tasks/        # Reusable scripts for performing specific tasks
+  nginx/          # This could be an external repository
+    files/        # Static configuration files uploaded via `files.upload()` 
+    templates/    # Templated configuration files uploaded via `files.template()`
+    |-- nginx.py
+|-- deploy.py         # The main deploy script
 ```
+{% endtab %}
+{% endtabs %}
 
-Host and group module definitions are always searched relative to the inventory.
-Scripts are always executed in their respective folder, so files and templates are
-relative to the script. Access to the "main" directory is always possible, and is defined
-as the directory of the main script that is executed.
-
-
-You can have a single `deploy.py` script that does everything, or you can organize different service deploys into different scripts. split deploy script different scripts to deploy different services, or one big script that does it all.
+TOdOOOOOOOO Depending on your specific use-case, it might be beneficial to organize your deploy. Managing dotfiles be done cleanly with a single `deploy.py` script and no explicit inventory. For real infrastructure management we recommend keeping things organized and modular.
 
 See the included [Examples](../TODO/) for more details on different layouts for different use-cases.
-
-### Simple deploys
-
-If your deploy is very limited in scope, the following layout might be a better fit:
-
-```
-hosts/
-	- example.py # host specific variables
-groups/ # if needed
-- inventory.py  # all hosts
-tasks/  # reusable scripts performing specific tasks
-    - ssh.py
-    - nginx.py
-files/     # Static files to upload via `files.upload()` not belonging to any task
-	- sshd.conf
-templates/ # Templates that are rendered and uploaded via `files.template()`
-	- nginx.conf.j2
-- deploy.py        # Main deploy script that can be re-run to update configuration
-```
