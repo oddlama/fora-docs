@@ -7,7 +7,52 @@ A deploy is a collection of several components:
 * [**Groups.**](TODO/) Hosts inherit the variables defined by the groups they belong to. All hosts implicitly belong to the `all` group, which can be used to define global variables.
 * [**Scripts.**](TODO/) Regular python scripts specifying what should be done on the remote hosts.
 
-Fora always requires at least one inventory and a main script to run.
+Fora always requires at least one inventory and a script to run. Here is a short
+toy-example using each of the above components, to make their purpose more clear:
+
+{% tabs %}
+{% tab title="inventory.py" %}
+```python
+# A list of your hosts.
+hosts = ["webserver", ""]
+```
+{% endtab %}
+
+{% tab title="groups/web.py" %}
+```python
+# A group that is just used for grouping can be empty.
+```
+{% endtab %}
+
+{% tab title="hosts/webserver.py" %}
+```python
+from fora import host
+
+# Add to web group and overwrite auxiliary_packages
+host.add_group("web")
+
+auxiliary_packages = ["neovim"]
+```
+{% endtab %}
+
+{% tab title="deploy.py" %}
+```python
+from fora.host import current_host as host
+from fora.operations import system
+
+# Default if auxiliary_packages is not overwritten on a host or group.
+auxiliary_packages = []
+
+# Install the packages configured in the host or group variables.
+system.package(name="Install auxiliary packages", packages=host.auxiliary_packages)
+
+# Also install nginx if this is a web-host
+if "web" in host.groups:
+	system.package(name="Install nginx", packages=["nginx"])
+```
+{% endtab %}
+{% endtabs %}
+
 
 ## Deploy structure
 

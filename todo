@@ -1,3 +1,12 @@
+# host.something does variable lookup in the following order:
+# ost, groups (respecting group dependencies), this script (global variable above)
+if host.install_nginx:
+	system.package(name="Install nginx", package="nginx")
+
+    global variables are mostly an anti-pattern. use script defaults insteadi.
+	global variables lend themsleves nicely to represent things like api keys that
+	are not defaults but the same for all hosts.
+
 ## Explanations. Will be moved.
 
 production inventory should be able to set other global variables
