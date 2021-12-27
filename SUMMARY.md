@@ -11,7 +11,7 @@
 
 ## Examples
 
-* [Deploy layouts](examples/deploy-layouts.md)
+* [Dotfiles](examples/dotfiles.md)
 * [Reusable scripts](examples/reusable-scripts.md)
 * [Using secrets](examples/using-secrets.md)
 
