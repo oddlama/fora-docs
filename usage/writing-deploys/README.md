@@ -14,24 +14,20 @@ toy-example using each of the above components, to make their purpose more clear
 {% tab title="inventory.py" %}
 ```python
 # A list of your hosts.
-hosts = ["webserver", ""]
+hosts = ["myhost"]
 ```
 {% endtab %}
 
 {% tab title="groups/web.py" %}
 ```python
-# A group that is just used for grouping can be empty.
+# A group can define variables, but doesn't need to.
 ```
 {% endtab %}
 
-{% tab title="hosts/webserver.py" %}
+{% tab title="hosts/myhost.py" %}
 ```python
 from fora import host
-
-# Add to web group and overwrite auxiliary_packages
-host.add_group("web")
-
-auxiliary_packages = ["neovim"]
+host.add_group("web") # Add to group
 ```
 {% endtab %}
 
@@ -40,14 +36,7 @@ auxiliary_packages = ["neovim"]
 from fora.host import current_host as host
 from fora.operations import system
 
-# Default if auxiliary_packages is not overwritten on a host or group.
-auxiliary_packages = []
-
-# Install the packages configured in the host or group variables.
-system.package(name="Install auxiliary packages", packages=host.auxiliary_packages)
-
-# Also install nginx if this is a web-host
-if "web" in host.groups:
+if "web" in host.groups: # Install nginx if this is a web-host
 	system.package(name="Install nginx", packages=["nginx"])
 ```
 {% endtab %}
@@ -72,7 +61,7 @@ deploy/
     |-- all.py        # Global variables
   tasks/        # Reusable scripts for performing specific tasks
     |-- nginx.py
-  files/        # Static configuration files uploaded via `files.upload()` 
+  files/        # Static configuration files uploaded via `files.upload()`
   templates/    # Templated configuration files uploaded via `files.template()`
     |-- inventory.py  # A list of all managed hosts
   |-- deploy.py     # The main deploy script
