@@ -8,12 +8,13 @@ Fora is an infrastructure and configuration management tool inspired by [Ansible
 
 You can install Fora with pip:
 
-```
+```bash
 pip install fora
 ```
 
 With Fora, you create deploys, which are scripts that define in which state the remote host should be. These so-called operations are just functions that you call in a python script:
 
+{% code title="deploy.py" %}
 ```python
 from fora.operations import files, system
 
@@ -25,6 +26,7 @@ system.package(
     name="Install neovim",
     package="neovim")
 ```
+{% endcode %}
 
 These can then be executed against an inventory, or a specific remote host via SSH:
 
