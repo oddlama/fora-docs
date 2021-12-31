@@ -2,7 +2,7 @@
 
 A deploy is a collection of several components:
 
-* [**Inventories.**](TODO/) Collections of hosts, against which your scripts are run. Standalone hostnames like `root@example.com` are valid inventories.
+* [**Inventories.**](TODO/) Collections of hosts, against which your scripts are run. Either defined by a file, or by specifying a single hostname like `root@example.com` for ad-hoc runs.
 * [**Hosts.**](TODO/) Host definitions allow you to assign variables and groups to specific hosts.
 * [**Groups.**](TODO/) Hosts inherit the variables defined by the groups they belong to. All hosts implicitly belong to the `all` group, which can be used to define global variables.
 * [**Scripts.**](TODO/) Regular python scripts specifying what should be done on the remote hosts.
@@ -41,7 +41,6 @@ if "web" in host.groups: # Install nginx if this is a web-host
 {% endtab %}
 {% endtabs %}
 
-
 ## Deploy structure
 
 The deploy structure is very flexible. There are only two things to keep in mind:
@@ -49,8 +48,7 @@ The deploy structure is very flexible. There are only two things to keep in mind
 * The working directory of a script is always its containing folder, so relative paths will work as expected. There is no definite _root directory_ for a deploy.
 * Host and group definitions are always expected to be in the `hosts/` and `groups/` folders relative to the inventory file.
 
-While managing dotfiles can be done cleanly with a single `deploy.py` script,
-we recommend one of the following layouts for larger infrastructure management:
+While managing dotfiles can be done cleanly with a single `deploy.py` script, we recommend one of the following layouts for larger scale infrastructure management:
 
 {% tabs %}
 {% tab title="default.txt" %}
@@ -88,5 +86,4 @@ deploy/
 {% endtab %}
 {% endtabs %}
 
-You can use `fora --init` in an empty directory to create a default layout structure.
-See the included [Examples](../TODO/) to see how different layouts may be used.
+You can use `fora --init` in an empty directory to create a default layout structure. See the included [Examples](../TODO/) to see how different layouts may be used.
