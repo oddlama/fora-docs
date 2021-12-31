@@ -11,7 +11,7 @@
 
 ## Examples
 
-* [Dotfiles](examples/dotfiles.md)
+* [Managing dotfiles](examples/dotfiles.md)
 * [Reusable scripts](examples/reusable-scripts.md)
 * [Using secrets](examples/using-secrets.md)
 
