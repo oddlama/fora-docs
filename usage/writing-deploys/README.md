@@ -52,6 +52,7 @@ We recommend one of the following layouts for larger scale infrastructure manage
 {% tabs %}
 {% tab title="minimal.txt" %}
 While a single `deploy.py` would be truly minimal, this is a reasonable starting point to extend from.
+
 ```python
 deploy/
 ├─ hosts/           # Host specific configuration
@@ -95,9 +96,7 @@ dotfiles/
 {% endtab %}
 
 {% tab title="modular.txt" %}
-The arguably most versatile of the single-inventory layouts.
-Functionality should be separated into modular tasks. Tasks can for example manage a specific service,
-and the main deploy just calls the task scripts.
+The arguably most versatile of the single-inventory layouts. Functionality should be separated into modular tasks. Tasks can for example manage a specific service, and the main deploy just calls the task scripts.
 
 ```python
 deploy/
@@ -117,9 +116,8 @@ deploy/
 ```
 {% endtab %}
 
-{% tab title="staging\_prod.txt" %}
-A variation of the modular layout that defines two separate inventories
-to allow deploying against a set of staging and/or production hosts.
+{% tab title="staging_prod.txt" %}
+A variation of the modular layout that defines two separate inventories to allow deploying against a set of staging and/or production hosts.
 
 ```python
 deploy/
