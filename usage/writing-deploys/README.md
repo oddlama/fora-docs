@@ -86,4 +86,4 @@ deploy/
 {% endtab %}
 {% endtabs %}
 
-You can use `fora --init` in an empty directory to create a default layout structure. See the included [Examples](../TODO/) to see how different layouts may be used.
+You can use `fora --init` in an empty directory to initialize it with a default deploy structure. See the included [Examples](../TODO/) to see how different layouts may be used.
