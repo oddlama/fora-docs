@@ -19,7 +19,7 @@ In summary, I wanted a tool that
 - is more like a dumb API. Except for initial setup like inventory loading, the tool should behave like a library without strange side-effects. Smart tools are always great, but sometimes dumb tools are better.
 - focuses on being a tool for remote scripting and not a whole environment. Keeping the tool lightweight increases its maintainability and reduces the amount of
 details one needs to learn about it. If you for example need to store a secret, you can already choose from a lot of good python libraries.
-- properly deals with the dict merging vs. dict overwriting issue. Scripts should have the option to do both without.
+- properly deals with the dict merging vs. dict overwriting issue. Scripts should have the option to do both while maintaining intuitive syntax.
 - can detect variable definition conflicts. Imagine a host is in two group, which both define a variable `var`. Which definition is chosen? Instead, this should be an error.
 - reduces boilerplate operation arguments. When configuring services you often need to create files for a specific user with certain permissions. Twenty times.
 Therefore, I want to be able to temporarily change the defaults in a `with` block to reduce boilerplate and to keep my scripts readable.
@@ -35,6 +35,7 @@ Otherwise, visit [TODO](./usage) if you are interested in how to use fora.
 
 
 
+## maybe make **semi sections** out of the above and include examples. better to read as people bothering to read this section are 99% already familiar with other tools.
 ## TODO DELETE BELOW OR RESTRUCTURE FEATURES ALSO TODO show limitiations arising from simplicity (no become, no parallel execution)
 
 
