@@ -53,7 +53,7 @@ The general deploy structure is very flexible. There are only two things to keep
 We recommend one of the following layouts for larger scale infrastructure management:
 
 {% tabs %}
-{% tab title="minimal.txt" %}
+{% tab title="minimal" %}
 While a single `deploy.py` would be truly minimal, this is a reasonable starting point to extend from.
 
 ```python
@@ -65,7 +65,7 @@ deploy/
 ```
 {% endtab %}
 
-{% tab title="flat.txt" %}
+{% tab title="flat" %}
 A flat layout for smaller deploys where all files and templates are stored in the main directory.
 
 ```python
@@ -83,7 +83,7 @@ deploy/
 ```
 {% endtab %}
 
-{% tab title="dotfiles.txt" %}
+{% tab title="dotfiles" %}
 Creates just a `deploy.py` intended to be run locally with `fora local: deploy.py` to install dotfiles for the current user.
 
 ```python
@@ -98,7 +98,7 @@ dotfiles/
 ```
 {% endtab %}
 
-{% tab title="modular.txt" %}
+{% tab title="modular" %}
 The arguably most versatile of the single-inventory layouts. Functionality should be separated into modular tasks. Tasks can for example manage a specific service, and the main deploy just calls the task scripts.
 
 ```python
@@ -119,7 +119,7 @@ deploy/
 ```
 {% endtab %}
 
-{% tab title="staging_prod.txt" %}
+{% tab title="staging_prod" %}
 A variation of the modular layout that defines two separate inventories to allow deploying against a set of staging and/or production hosts.
 
 ```python
@@ -142,4 +142,4 @@ deploy/
 {% endtab %}
 {% endtabs %}
 
-You can use `fora --init <layout_name>` in an empty directory to initialize it with a specific deploy structure. See the included [Examples](../TODO/) to see how different layouts may be used.
+You can use `fora --init <layout>` in an empty directory to initialize it with a specific deploy structure. See the included [Examples](../TODO/) to see how different layouts may be used.
