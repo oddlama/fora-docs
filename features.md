@@ -2,45 +2,37 @@
 
 ## How is Fora different from existing tools?
 
-First of all, you are probably here asking yourself why I wrote this. The answer is mainly
-that I liked doing it. I always had my minor gripes with the existing well-known infra tools
-that I wanted to address. Is Fora perfect? No. Certainly far from it.
+You are probably here, asking yourself why I wrote this when there already are
+tools doing the same things. The answer is mainly that I liked writing it while
+I could address some issues I had with existing tools. Is Fora perfect? No.
+Certainly far from it. But it is my shot at creating something I personally enjoy using.
 
-I took a lot of inspiration from amazing existing tools like Ansible and pyinfra.
+I took a lot of inspiration from amazing existing tools like [Ansible](https://www.ansible.com) and [pyinfa](https://pyinfra.com).
 I urge you to check them out if you haven't already. If you require large-scale
-deploys (>100 hosts), they are most likely a better choice and more mature tools.
+deploys with many hosts, they are most likely a better choice and definitely more mature tools.
 
-I did especially focus on creating a tool thay I enjoy to use. This means I implemented concepts
-that are important to me and tried to fix the things that bothered me previously.
-In summary, I wanted a tool that
+## Outlining the differences
 
-- is more developer friendly. I can already code python and I want access to the full capabilities of python at my fingertips when writing scripts or defining variables.
-- minimizes hidden state and complexity. Often introduced by the tool itself (as what feels like weird magic). I especially want clean, easy and self-contained deploy scripts.
-- is more like a dumb API. Except for initial setup like inventory loading, the tool should behave like a library without strange side-effects. Smart tools are always great, but sometimes dumb tools are better.
-- focuses on being a tool for remote scripting and not a whole environment. Keeping the tool lightweight increases its maintainability and reduces the amount of
-details one needs to learn about it. If you for example need to store a secret, you can already choose from a lot of good python libraries.
-- properly deals with the dict merging vs. dict overwriting issue. Scripts should have the option to do both while maintaining intuitive syntax.
-- can detect variable definition conflicts. Imagine a host is in two group, which both define a variable `var`. Which definition is chosen? Instead of choosing arbitrarily, this should be an error.
-- reduces boilerplate operation arguments. When configuring services, you often need to create files for a specific user with certain permissions. Twenty times.
-Therefore, I want to be able to temporarily change the defaults in a `with` block to reduce boilerplate and to keep my scripts readable.
-- doesn't interface with the remote using shell commands. I want the equivalent of a remote `subprocess.run`, both internally and in scripts. This way I don't have to worry about
-escaping arguments but can still spawn a shell when I need to.
-- reuses a single ssh connection for all commands. This is the only sane choice, and it is infinitely faster than the alternative.
-- provides useful output. It doesn't need to be super fancy. I just want to see the important information highlighted, instead of being presented with a terminal-filling
-block of text in a yellowish tint seemingly taken from `/dev/urandom`.
-- generally reduces friction where possible. When I just want to write a deploy for my dotfiles, a single (and short) `deploy.py` script should be all that is needed.
+To better illustrate the actual differences, I have compiled a list of short examples showing how Fora
+solves different problems I encountered with other tools. Basic knowledge about general infrastructure
+tools will be beneficial to fully understand this section.
 
-If you already know existing infrastructure tools and just want to see how Fora solves these problems,
-have a look at [TODO](./introduction-and-short-how-to-do-this-examples-for-people-who-know-other-tools).
-Otherwise, visit [TODO](./usage) if you are interested in how to use fora.
+I wanted to create a tool that...
+
+**is more developer friendly.** I can already code python and I want access to the full capabilities of python at my fingertips when writing scripts or defining variables.
+**minimizes hidden state and complexity.** Often introduced by the tool itself (as what feels like weird magic). I especially want clean, easy and self-contained deploy scripts.
+**is more like a dumb API.** Except for initial setup like inventory loading, the tool should behave like a library without strange side-effects. Smart tools are always great, but sometimes dumb tools are better.
+**focuses on being a tool for remote scripting and not a whole environment.** Keeping the tool lightweight increases its maintainability and reduces the amount of details one needs to learn about it. If you for example need to store a secret, you can already choose from a lot of good python libraries.
+**properly deals with the dict merging vs.** dict overwriting issue. Scripts should have the option to do both while maintaining intuitive syntax.
+**can detect variable definition conflicts.** Imagine a host is in two group, which both define a variable `var`. Which definition is chosen? Instead of choosing arbitrarily, this should be an error.
+**reduces boilerplate operation arguments.** When configuring services, you often need to create files for a specific user with certain permissions. Twenty times. Therefore, I want to be able to temporarily change the defaults in a `with` block to reduce boilerplate and to keep my scripts readable.
+**doesn't interface with the remote using shell commands.** I want the equivalent of a remote `subprocess.run`, both internally and in scripts. This way I don't have to worry about escaping arguments but can still spawn a shell when I need to.
+**reuses a single ssh connection for all commands.** This is the only sane choice, and it is infinitely faster than the alternative.
+**provides useful output.** It doesn't need to be super fancy. I just want to see the important information highlighted, instead of being presented with a terminal-filling block of text in a yellowish tint seemingly taken from `/dev/urandom`.
+**generally reduces friction where possible.** When I just want to write a deploy for my dotfiles, a single (and short) `deploy.py` script should be all that is needed.
 
 
-
-## maybe name this "Differences [to existing tools]" instead of Features.
-## maybe make **semi sections** out of the above and include examples. better to read as people bothering to read this section are 99% already familiar with other tools.
 ## TODO DELETE BELOW OR RESTRUCTURE FEATURES ALSO TODO show limitiations arising from simplicity (no become, no parallel execution)
-
-
 
 
 

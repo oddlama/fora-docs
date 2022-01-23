@@ -28,7 +28,7 @@ system.package(
 ```
 {% endcode %}
 
-These scripts can then be executed against an inventory, or a specific remote host - usually via SSH:
+These scripts are executed against an inventory, or a specific remote host (usually via SSH).
 
 ```bash
 fora root@example.com deploy.py
