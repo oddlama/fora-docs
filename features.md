@@ -21,13 +21,14 @@ In summary, I wanted a tool that
 details one needs to learn about it. If you for example need to store a secret, you can already choose from a lot of good python libraries.
 - properly deals with the dict merging vs. dict overwriting issue. Scripts should have the option to do both while maintaining intuitive syntax.
 - can detect variable definition conflicts. Imagine a host is in two group, which both define a variable `var`. Which definition is chosen? Instead of choosing arbitrarily, this should be an error.
-- reduces boilerplate operation arguments. When configuring services you often need to create files for a specific user with certain permissions. Twenty times.
+- reduces boilerplate operation arguments. When configuring services, you often need to create files for a specific user with certain permissions. Twenty times.
 Therefore, I want to be able to temporarily change the defaults in a `with` block to reduce boilerplate and to keep my scripts readable.
 - doesn't interface with the remote using shell commands. I want the equivalent of a remote `subprocess.run`, both internally and in scripts. This way I don't have to worry about
 escaping arguments but can still spawn a shell when I need to.
+- reuses a single ssh connection for all commands. This is the only sane choice, and it is infinitely faster than the alternative.
+- provides useful output. It doesn't need to be super fancy. I just want to see the important information highlighted, instead of being presented with a terminal-filling
+block of text in a yellowish tint seemingly taken from `/dev/urandom`.
 - generally reduces friction where possible. When I just want to write a deploy for my dotfiles, a single (and short) `deploy.py` script should be all that is needed.
-- provides useful output. It doesn't need to be super fancy. I just want to see the important information highlighted instead of a terminal-filling block of text
-seemingly taken from `/dev/urandom` in a yellowish tint.
 
 If you already know existing infrastructure tools and just want to see how Fora solves these problems,
 have a look at [TODO](./introduction-and-short-how-to-do-this-examples-for-people-who-know-other-tools).
@@ -35,6 +36,7 @@ Otherwise, visit [TODO](./usage) if you are interested in how to use fora.
 
 
 
+## maybe name this "Differences [to existing tools]" instead of Features.
 ## maybe make **semi sections** out of the above and include examples. better to read as people bothering to read this section are 99% already familiar with other tools.
 ## TODO DELETE BELOW OR RESTRUCTURE FEATURES ALSO TODO show limitiations arising from simplicity (no become, no parallel execution)
 
