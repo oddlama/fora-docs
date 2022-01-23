@@ -157,6 +157,14 @@ print(params.path)
 print(params.users)
 ```
 {% endtab %}
+{% tab title="deploy.py" %}
+```python
+from fora import local
+
+# Execute a script with parameters
+local.script("with_params.py", params=dict(path="/path/to/somewhere"))
+```
+{% endtab %}
 {% endtabs %}
 
 ### ...reuses a single ssh connection for all commands.

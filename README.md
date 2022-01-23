@@ -14,7 +14,8 @@ pip install fora
 
 Afterwards, you can use it to write scripts that can run operation or commands on a remote host.
 
-{% code title="deploy.py" %}
+{% tabs %}
+{% tab title="deploy.py" %}
 ```python
 from fora.operations import files, system
 
@@ -26,7 +27,8 @@ system.package(
     name="Install neovim",
     package="neovim")
 ```
-{% endcode %}
+{% endtab %}
+{% endtabs %}
 
 These scripts are executed against an inventory, or a specific remote host (usually via SSH).
 
