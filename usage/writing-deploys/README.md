@@ -7,7 +7,7 @@ A deploy is a collection of several components:
 * [**Groups.**](TODO/) Hosts inherit the variables defined by the groups they belong to. All hosts implicitly belong to the `all` group, which can be used to define global variables.
 * [**Scripts.**](TODO/) Regular python scripts specifying what should be done on the remote hosts.
 
-Fora always requires something to run against (like an inventory) and a script to run. Here is an example using each of the above components:
+Fora always requires an inventory and a script to run. Here is an example using each of the above components:
 
 {% tabs %}
 {% tab title="inventory.py" %}
@@ -19,7 +19,7 @@ hosts = [ dict(url="ssh://myhost.com", groups=["web"]) ]
 
 {% tab title="groups/web.py" %}
 ```python
-# You can define configuration variables, but don't need to.
+# Global variables are later accessible in your script
 packages_to_install = ["nginx"]
 ```
 {% endtab %}
