@@ -15,7 +15,7 @@ that are important to me and tried to fix the things that bothered me previously
 In summary, I wanted a tool that
 
 - is more developer friendly. I can already code python and I want access to the full capabilities of python at my fingertips when writing scripts or defining variables.
-- minimizes hidden state and complexity intruduced by the tool itself ("weird magic"), especially regarding the actual deploy scripts.
+- minimizes hidden state and complexity. Often introduced by the tool itself (as what feels like weird magic). I especially want clean, easy and self-contained deploy scripts.
 - is more like a dumb API. Except for initial setup like inventory loading, the tool should behave like a library without strange side-effects. Smart tools are always great, but sometimes dumb tools are better.
 - focuses on being a tool for remote scripting and not a whole environment. Keeping the tool lightweight increases its maintainability and reduces the amount of
 details one needs to learn about it. If you for example need to store a secret, you can already choose from a lot of good python libraries.
