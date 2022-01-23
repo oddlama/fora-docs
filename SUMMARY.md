@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Getting Started](README.md)
-* [Features](features.md)
+* [Outlining the differences](features.md)
 * [Frequently Asked Questions](frequently-asked-questions.md)
 
 ## Usage
