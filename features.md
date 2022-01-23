@@ -10,33 +10,13 @@ I took a lot of inspiration from amazing existing tools like [Ansible](https://w
 
 To better illustrate the actual differences, I have compiled a list of short examples showing how Fora solves different problems I encountered with other tools. Basic knowledge about general infrastructure tools will be beneficial to fully understand this section.
 
-I wanted to create a tool that...
+In no particular order, I wanted to create a tool that...
 
 ### ...is more developer friendly.
 
 I can already code python and I want access to the full capabilities of python at my fingertips when writing scripts or defining variables.
 In Fora, everything is a regular python script. Need to fetch information from a REST API to define your inventory? Just do it like you would
 in any other python script.
-
-### ...behaves more like a dumb API.
-
-Smart tools are always great, but sometimes dumb tools are better.
-A tool with a lot of hidden internal state can create surprising situations
-and make it hard to reason about what is actually going on.
-
-I wanted to encourage writing clean, simple and self-contained deploy scripts,
-which meant removing all internal state beyond what is absolutely necessary.
-After inventory loading, Fora behaves like a regular python libary with some
-public global variables to access the loaded information.
-No caching, and no gathering of facts that could change later.
-
-### ...focuses on being a remote scripting API and not an entire language and environment.
-
-Keeping the tool lightweight increases maintainability for everyone involved.
-Fewer things can change or break, and fewer things need to be kept updated.
-
-If you for example need to store a secret, you can already choose from a lot of good python libraries.
-There's no need for Fora to implement any of this.
 
 ### ...can detect variable definition conflicts.
 
@@ -197,6 +177,26 @@ You can pass `--diff` to additionally get a diff for each changed file.
 
 Don't like colors? Fora respects the `NO_COLOR` environment variable.
 
+### ...behaves more like a dumb API.
+
+Smart tools are always great, but sometimes dumb tools are better.
+A tool with a lot of hidden internal state can create surprising situations
+and make it hard to reason about what is actually going on.
+
+I wanted to encourage writing clean, simple and self-contained deploy scripts,
+which meant removing all internal state beyond what is absolutely necessary.
+After inventory loading, Fora behaves like a regular python libary with some
+public global variables to access the loaded information.
+No caching, and no gathering of facts that could change later.
+
+### ...focuses on being a remote scripting API and not an entire language and environment.
+
+Keeping the tool lightweight increases maintainability for everyone involved.
+Fewer things can change or break, and fewer things need to be kept updated.
+
+If you for example need to store a secret, you can already choose from a lot of good python libraries.
+There's no need for Fora to implement any of this.
+
 ### ...generally reduces boilerplate where possible.
 
 When I just want to write a deploy for my dotfiles, a single (and short) `deploy.py` script should be all that is needed,
@@ -233,9 +233,9 @@ When an operation fails for whatever reason, the whole deploy will be aborted. I
 these automatic checks can be disabled by passing `check=False` to any operation or catching the exception.
 This makes deploy scripts behave sanely, like any regular script.
 
-## Downsides
+## Drawbacks
 
-Here are some obvious differences that may be classified as downsides from other approaches:
+Here are a few drawbacks compared to other approaches:
 - There is no inherent synchronization between hosts. While parallelization is theoretically possible,
 hosts are provisioned one-by-one, currently sequentially. This also means the output is grouped by host,
 which makes it harder to spot differences between hosts in a particular operation.
