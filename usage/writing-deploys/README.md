@@ -7,25 +7,27 @@ A deploy is a collection of several components:
 * [**Groups.**](TODO/) Hosts inherit the variables defined by the groups they belong to. All hosts implicitly belong to the `all` group, which can be used to define global variables.
 * [**Scripts.**](TODO/) Regular python scripts specifying what should be done on the remote hosts.
 
-Fora always requires at least one inventory and a script to run. Here is an example using each of the above components:
+Fora always requires something to run against (like an inventory) and a script to run. Here is an example using each of the above components:
 
 {% tabs %}
 {% tab title="inventory.py" %}
 ```python
 # A list of your hosts.
-hosts = ["myhost"]
+hosts = [ dict(url="ssh://myhost.com", groups=["web"]) ]
 ```
 {% endtab %}
 
 {% tab title="groups/web.py" %}
 ```python
-# A group can define variables, but doesn't need to.
+# You can define configuration variables, but don't need to.
+packages_to_install = ["nginx"]
 ```
 {% endtab %}
 
 {% tab title="hosts/myhost.py" %}
 ```python
-add_group("web") # Add to group
+# You can also override or even extend variables
+packages_to_install.append("neovim")
 ```
 {% endtab %}
 
@@ -34,8 +36,9 @@ add_group("web") # Add to group
 from fora import host
 from fora.operations import system
 
-if "web" in host.groups: # Install nginx if this is a web-host
-    system.package(name="Install nginx", packages=["nginx"])
+system.package(name="Install selected packages", packages=host.packages_to_install)
+if "web" in host.groups: # You can dynamically check attributes of the host
+	print("Running on a web host!")
 ```
 {% endtab %}
 {% endtabs %}

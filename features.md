@@ -3,7 +3,7 @@
 ## How is Fora different from existing tools?
 
 First of all, you are probably here asking yourself why I wrote this. The answer is mainly
-because I liked doing it. I always had my minor gripes with the existing well-known infra tools
+that I liked doing it. I always had my minor gripes with the existing well-known infra tools
 that I wanted to address. Is Fora perfect? No. Certainly far from it.
 
 I took a lot of inspiration from amazing existing tools like Ansible and pyinfra.
