@@ -20,11 +20,11 @@ In summary, I wanted a tool that
 - focuses on being a tool for remote scripting and not a whole environment. Keeping the tool lightweight increases its maintainability and reduces the amount of
 details one needs to learn about it. If you for example need to store a secret, you can already choose from a lot of good python libraries.
 - properly deals with the dict merging vs. dict overwriting issue. Scripts should have the option to do both while maintaining intuitive syntax.
-- can detect variable definition conflicts. Imagine a host is in two group, which both define a variable `var`. Which definition is chosen? Instead, this should be an error.
+- can detect variable definition conflicts. Imagine a host is in two group, which both define a variable `var`. Which definition is chosen? Instead of choosing arbitrarily, this should be an error.
 - reduces boilerplate operation arguments. When configuring services you often need to create files for a specific user with certain permissions. Twenty times.
 Therefore, I want to be able to temporarily change the defaults in a `with` block to reduce boilerplate and to keep my scripts readable.
-- doesn't provide interpreted remote shell commands. I want the equivalent of a remote `subprocess.run`, so I don't have to worry about
-escaping arguments but can spawn a shell when I need to.
+- doesn't interface with the remote using shell commands. I want the equivalent of a remote `subprocess.run`, both internally and in scripts. This way I don't have to worry about
+escaping arguments but can still spawn a shell when I need to.
 - generally reduces friction where possible. When I just want to write a deploy for my dotfiles, a single (and short) `deploy.py` script should be all that is needed.
 - provides useful output. It doesn't need to be super fancy. I just want to see the important information highlighted instead of a terminal-filling block of text
 seemingly taken from `/dev/urandom` in a yellowish tint.
