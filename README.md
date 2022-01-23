@@ -2,7 +2,7 @@
 
 ## What is Fora?
 
-Fora is an infrastructure and configuration management tool inspired by [Ansible](https://www.ansible.com) and [pyinfa](https://pyinfra.com). It can be used for machine provisioning and to configuration management. See [how it differs](usage/features.md) from existing tools.
+Fora is an infrastructure and configuration management tool inspired by [Ansible](https://www.ansible.com) and [pyinfa](https://pyinfra.com). It can be used for machine provisioning and configuration management. See [how it differs](usage/features.md) from existing tools.
 
 ## Installation & Quickstart
 
@@ -12,7 +12,7 @@ You can install Fora with pip:
 pip install fora
 ```
 
-With Fora, you create deploys, which are scripts that define in which state the remote host should be. These so-called operations are just functions that you call in a python script:
+Afterwards, you can use it to write scripts that can run operation or commands on a remote host.
 
 {% code title="deploy.py" %}
 ```python
@@ -28,10 +28,18 @@ system.package(
 ```
 {% endcode %}
 
-These can then be executed against an inventory, or a specific remote host via SSH:
+These scripts can then be executed against an inventory, or a specific remote host - usually via SSH:
 
 ```bash
 fora root@example.com deploy.py
 ```
 
-Fora can do a lot more than this, which you can learn in detail in the [Usage](usage/) section.
+To start with your own (more complex) deploy, you can have Fora create a scaffolding in an empty directory.
+There are [different scaffoldings](TODO) available for different use-cases.
+
+```bash
+fora --init minimal
+```
+
+Fora can do a lot more than this, which is explained in the [Usage](./usage) section.
+If you are interested in how Fora is different from existing tools, have a look at [TODO](./introduction-and-short-how-to-do-this-examples-for-people-who-know-other-tools).

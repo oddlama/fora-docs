@@ -38,7 +38,7 @@ from fora.operations import system
 
 system.package(name="Install selected packages", packages=host.packages_to_install)
 if "web" in host.groups: # You can dynamically check attributes of the host
-	print("Running on a web host!")
+    print("Running on a web host!")
 ```
 {% endtab %}
 {% endtabs %}
