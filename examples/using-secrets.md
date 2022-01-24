@@ -27,7 +27,7 @@ secrets = toml.loads(_decrypted_toml)
 {% endtab %}
 {% tab title="groups/desktops.py" %}
 ```python
-root_password_hash = secrets["root_password_hash"]
+root_password_hash = secrets["desktops"]["root_password_hash"]
 ```
 {% endtab %}
 {% endtabs %}
@@ -64,5 +64,11 @@ secrets = toml.loads(_decrypted_toml)
 # ...
 ```
 {% endcode %}
+{% endtab %}
+{% tab title="secrets.toml" %}
+```python
+[desktops]
+root_password_hash = "$6$3gtzs4..."
+```
 {% endtab %}
 {% endtabs %}
