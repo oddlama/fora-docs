@@ -11,20 +11,16 @@
   * [Hosts](usage/introduction/hosts.md)
   * [Groups](usage/introduction/groups.md)
   * [Scripts](usage/introduction/scripts.md)
+* [Writing a deploy from scratch](usage/writing-a-deploy-from-scratch.md)
+* [Best practices](usage/best-practices.md)
 
 ## Fora API
 
-* [Deploys](fora-api/deploys/README.md)
-  * [Hosts](fora-api/deploys/hosts.md)
-  * [Groups](fora-api/deploys/groups.md)
-  * [Inventories](fora-api/deploys/inventories.md)
-  * [Scripts](fora-api/deploys/scripts.md)
-  * [Variable Hierarchy](fora-api/deploys/variables.md)
-* [Connectors](fora-api/connectors.md)
 * [Operations](fora-api/operations.md)
+* [Connectors](fora-api/connectors.md)
 
 ## Examples
 
 * [Managing dotfiles](examples/dotfiles.md)
-* [Reusable scripts](examples/reusable-scripts.md)
+* [Modular deploy](examples/modular-deploy.md)
 * [Using secrets](examples/using-secrets.md)
