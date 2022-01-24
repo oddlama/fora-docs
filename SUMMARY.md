@@ -1,27 +1,30 @@
 # Table of contents
 
 * [Getting Started](README.md)
-* [Outlining the differences](features.md)
+* [Outlining the differences](outlining-the-differences.md)
 * [Frequently Asked Questions](frequently-asked-questions.md)
 
 ## Usage
 
-* [Writing deploys](usage/writing-deploys/README.md)
-  * [Inventories](usage/writing-deploys/inventories.md)
+* [Introduction](usage/introduction/README.md)
+  * [Inventories](usage/introduction/inventories.md)
+  * [Hosts](usage/introduction/hosts.md)
+  * [Groups](usage/introduction/groups.md)
+  * [Scripts](usage/introduction/scripts.md)
+
+## Fora API
+
+* [Deploys](fora-api/deploys/README.md)
+  * [Hosts](fora-api/deploys/hosts.md)
+  * [Groups](fora-api/deploys/groups.md)
+  * [Inventories](fora-api/deploys/inventories.md)
+  * [Scripts](fora-api/deploys/scripts.md)
+  * [Variable Hierarchy](fora-api/deploys/variables.md)
+* [Connectors](fora-api/connectors.md)
+* [Operations](fora-api/operations.md)
 
 ## Examples
 
 * [Managing dotfiles](examples/dotfiles.md)
 * [Reusable scripts](examples/reusable-scripts.md)
 * [Using secrets](examples/using-secrets.md)
-
-## Fora internals
-
-* [Deploys](fora-internals/deploys/README.md)
-  * [Hosts](fora-internals/deploys/hosts.md)
-  * [Groups](fora-internals/deploys/groups.md)
-  * [Inventories](fora-internals/deploys/inventories.md)
-  * [Scripts](fora-internals/deploys/scripts.md)
-  * [Variable Hierarchy](fora-internals/deploys/variables.md)
-* [Connectors](fora-internals/connectors.md)
-* [Operations](fora-internals/operations.md)

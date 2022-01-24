@@ -1,11 +1,11 @@
-# Writing deploys
+# Introduction
 
 A deploy is a collection of several components:
 
-* [**Inventories.**](TODO/) Collections of hosts, against which your scripts run. Either defined by a file, or by specifying a single hostname like `root@example.com` for ad-hoc runs.
-* [**Hosts.**](TODO/) Host definitions allow you to assign variables and groups to specific hosts.
-* [**Groups.**](TODO/) Hosts inherit the variables defined by the groups they belong to. All hosts implicitly belong to the `all` group, which can be used to define global variables.
-* [**Scripts.**](TODO/) Regular python scripts specifying what should be done on the remote hosts.
+* [**Inventories.**](../writing-deploys/TODO/) Collections of hosts, against which your scripts run. Either defined by a file, or by specifying a single hostname like `root@example.com` for ad-hoc runs.
+* [**Hosts.**](../writing-deploys/TODO/) Host definitions allow you to assign variables and groups to specific hosts.
+* [**Groups.**](../writing-deploys/TODO/) Hosts inherit the variables defined by the groups they belong to. All hosts implicitly belong to the `all` group, which can be used to define global variables.
+* [**Scripts.**](../writing-deploys/TODO/) Regular python scripts specifying what should be done on the remote hosts.
 
 Fora always requires an inventory and a script to run. Here is an example using each of the above components:
 
@@ -84,8 +84,7 @@ deploy/
 {% endtab %}
 
 {% tab title="dotfiles" %}
-Creates just a `deploy.py` intended to be run locally with `fora local: deploy.py` to install dotfiles for the current user.
-A more complete example structure could look like:
+Creates just a `deploy.py` intended to be run locally with `fora local: deploy.py` to install dotfiles for the current user. A more complete example structure could look like:
 
 ```python
 dotfiles/

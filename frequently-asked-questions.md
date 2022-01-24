@@ -2,4 +2,4 @@
 
 #### Q: Why?
 
-**A:** [How Fora is different from existing tools](./features.md).
+**A:** [How Fora is different from existing tools](outlining-the-differences.md).

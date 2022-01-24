@@ -1,14 +1,10 @@
 # Inventories
 
-An inventory is either an inventory module file like `inventory.py`, or an ad-hoc
-url like `example.com` or `root@localhost`. Usually an inventory is defined as a module.
+An inventory is either an inventory module file like `inventory.py`, or an ad-hoc url like `example.com` or `root@localhost`. Usually an inventory is defined as a module.
 
-All special attributes that can be defined by an inventory are documented in [`InventoryWrapper`](TODO).
-For simplicity, you can regard your inventory module like an "instance" of this wrapper class.
-You can override the documented attributes and functions to modify it to you needs.
+All special attributes that can be defined by an inventory are documented in [`InventoryWrapper`](../writing-deploys/TODO/). For simplicity, you can regard your inventory module like an "instance" of this wrapper class. You can override the documented attributes and functions to modify it to you needs.
 
-The most important ones being `hosts` and `groups` which are used to declare
-the hosts and groups that belong to the inventory.
+The most important ones being `hosts` and `groups` which are used to declare the hosts and groups that belong to the inventory.
 
 ### Declaring hosts
 
@@ -16,8 +12,7 @@ Hosts are declared by defining the `hosts` variable.
 
 {% tabs %}
 {% tab title="simple.py" %}
-Hosts can be declared by just specifying the connection url.
-If this url is given without an connection schema, `ssh://` will be used as the default.
+Hosts can be declared by just specifying the connection url. If this url is given without an connection schema, `ssh://` will be used as the default.
 
 ```python
 hosts = ["host.example.com",    # same as ssh://host.example.com. The host's name will be deduced as `host.example.com`
@@ -26,13 +21,11 @@ hosts = ["host.example.com",    # same as ssh://host.example.com. The host's nam
          "local:mymachine"]     # Uses a the local connector which runs on the current machine as the user executing fora.
 ```
 {% endtab %}
-{% tab title="inventory.py" %}
-If you want to specify additional information, such as the host's groups,
-choosing a specific name or specifying the host module file,
-you can do so using a `dict` or by using the [`Host Declaration`](TODO) type.
 
-Specifying either a url or a name is mandatory. If you leave the url empty, you
-need to specify the url or a connector later in the host module.
+{% tab title="inventory.py" %}
+If you want to specify additional information, such as the host's groups, choosing a specific name or specifying the host module file, you can do so using a `dict` or by using the [`Host Declaration`](../writing-deploys/TODO/) type.
+
+Specifying either a url or a name is mandatory. If you leave the url empty, you need to specify the url or a connector later in the host module.
 
 ```python
 # Instead of using `dict`, you can use this typed variant if you like.
@@ -49,9 +42,7 @@ hosts = [dict(url="host.example.com", groups=["desktops"]),
 
 ### Declaring groups
 
-Groups are declared by defining the `groups` variable.
-If you omit this definition, a list of groups is automatically gathered from
-the group names used in your `hosts`.
+Groups are declared by defining the `groups` variable. If you omit this definition, a list of groups is automatically gathered from the group names used in your `hosts`.
 
 {% code title="inventory.py" %}
 ```python
@@ -79,14 +70,11 @@ To see whether your inventory behaves as expected, you can use
 fora --inspect-inventory inventory.py
 ```
 
-This will show a summary of all declared hosts and groups.
-For each host, it additionally lists the origin and effective value of all defined variables.
+This will show a summary of all declared hosts and groups. For each host, it additionally lists the origin and effective value of all defined variables.
 
 ### Setting global variables from the inventory
 
-Especially when managing several inventories (for example staging and production),
-you may want to set global variables (like API keys) from your inventory definition.
-You can do this by defining a method called `global_variables()`.
+Especially when managing several inventories (for example staging and production), you may want to set global variables (like API keys) from your inventory definition. You can do this by defining a method called `global_variables()`.
 
 {% code title="inventory_staging.py" %}
 ```python
@@ -105,5 +93,4 @@ from other_inventory import hosts
 
 ### Overwriting other behavior
 
-Similar to how `global_variables()` can be overwritten to define global variables,
-you may overwrite any public method defined in the [`InventoryWrapper`](TODO).
+Similar to how `global_variables()` can be overwritten to define global variables, you may overwrite any public method defined in the [`InventoryWrapper`](../writing-deploys/TODO/).
