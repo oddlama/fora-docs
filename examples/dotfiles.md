@@ -34,8 +34,8 @@ the first line of your script:
 
 ```python
 if __name__ == '__main__':
-	print("Please run this using `fora local: install.py`")
-	sys.exit(1)
+    print("Please run this using `fora local: install.py`")
+    sys.exit(1)
 
 # ...
 ```
