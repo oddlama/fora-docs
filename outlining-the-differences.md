@@ -252,4 +252,6 @@ behavior by modularizing scripts or by introducing a tag variable, it is not a b
 - Group definitions are executed once per relevant host. This is necessary to ensure correct variable
 modification behavior. Slow operations in a group module will therefore contribute more to execution time
 when there are many hosts.
-- Fora requires all managed hosts to already have python3.9 installed.
+- Fora requires all managed hosts to already have python3.9 installed. *(This situation might improve in the future)*
+- Currently you cannot escalate privileges on the remote systems. You either need to login as root,
+or be restricted to the user you logged in as. *(Will be possible in the future)*
