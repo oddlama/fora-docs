@@ -85,7 +85,7 @@ with defaults(file_mode="640", dir_mode="750", owner="root", group="nginx"):
     files.template(src="files/index.html", dest="/var/www/")
     # ... 20 other files
 
-    # This can also be nested and will always build upon the current defaults
+    # This can also be nested and will build upon the currently active defaults
     with defaults(owner="www"):
         files.upload(...)
 ```
@@ -252,3 +252,4 @@ behavior by modularizing scripts or by introducing a tag variable, it is not a b
 - Group definitions are executed once per relevant host. This is necessary to ensure correct variable
 modification behavior. Slow operations in a group module will therefore contribute more to execution time
 when there are many hosts.
+- Fora requires all managed hosts to already have python3.9 installed.

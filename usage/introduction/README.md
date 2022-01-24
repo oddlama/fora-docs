@@ -57,7 +57,7 @@ We recommend one of the following layouts for larger scale infrastructure manage
 While a single `deploy.py` would be truly minimal, this is a reasonable starting point to extend from.
 
 ```python
-deploy/
+./
 ├─ hosts/           # Host specific configuration
 │  └─ localhost.py
 ├─ inventory.py     # A list of all managed hosts
@@ -69,7 +69,7 @@ deploy/
 A flat layout for smaller deploys where all files and templates are stored in the main directory.
 
 ```python
-deploy/
+./
 ├─ hosts/           # Host specific configuration
 │  └─ localhost.py
 ├─ groups/          # Group specific configuration
@@ -87,7 +87,7 @@ deploy/
 Creates just a `deploy.py` intended to be run locally with `fora local: deploy.py` to install dotfiles for the current user. A more complete example structure could look like:
 
 ```python
-dotfiles/
+./
 ├─ zsh/             # zsh shell
 │  └─ zshrc
 ├─ kitty/           # kitty terminal
@@ -102,7 +102,7 @@ dotfiles/
 The arguably most versatile of the single-inventory layouts. Functionality should be separated into modular tasks. Tasks can for example manage a specific service, and the main deploy just calls the task scripts.
 
 ```python
-deploy/
+./
 ├─ hosts/           # Host specific configuration
 │  └─ localhost.py
 ├─ groups/          # Group specific configuration
@@ -123,7 +123,7 @@ deploy/
 A variation of the modular layout that defines two separate inventories to allow deploying against a set of staging and/or production hosts.
 
 ```python
-deploy/
+./
 ├─ inventories/
 │  ├─ hosts/        # Host specific configuration
 │  ├─ groups/       # Group specific configuration
