@@ -2,9 +2,10 @@
 
 An inventory is either an inventory module file like `inventory.py`, or an ad-hoc url like `example.com` or `root@localhost`. Usually an inventory is defined as a module.
 
-All special attributes that can be defined by an inventory are documented in [`InventoryWrapper`](../writing-deploys/TODO/). For simplicity, you can regard your inventory module like an "instance" of this wrapper class. You can override the documented attributes and functions to modify it to you needs.
+All special attributes that can be defined by an inventory are documented in [`InventoryWrapper`](../writing-deploys/TODO/).
+For all means and purposes, you can regard your inventory module as an "instance" of this wrapper class. You can override the documented attributes and functions to modify it to your needs.
 
-The most important ones being `hosts` and `groups` which are used to declare the hosts and groups that belong to the inventory.
+The two main inventory attributes are `hosts` and `groups` which are used to declare the hosts and groups that belong to the inventory.
 
 ### Declaring hosts
 
@@ -80,7 +81,7 @@ Especially when managing several inventories (for example staging and production
 ```python
 import os
 
-def global_variables()
+def global_variables():
     return dict(api_key=os.getenv("API_KEY_STAGING"))
 
 hosts = [...]

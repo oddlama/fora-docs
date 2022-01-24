@@ -106,7 +106,7 @@ to spawn a shell with `["bash", "-c", "<shellcommand>"]` when needed.
 from fora import host
 
 # Perfectly safe, arguments will directly be passed to subprocess.run on the remote.
-ret = host.run(["somecommand", "set", host.somevariable])
+ret = host.connection.run(["somecommand", "set", host.somevariable])
 # You also automatically have access to the captured output.
 print(ret.returncode, ret.stdout, ret.stderr)
 ```
