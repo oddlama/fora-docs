@@ -10,7 +10,6 @@
   * [Inventories](usage/introduction/inventories.md)
   * [Hosts & Groups](usage/introduction/hosts\_and\_groups.md)
   * [Scripts](usage/introduction/scripts.md)
-* [Writing a deploy from scratch](usage/writing-a-deploy-from-scratch.md)
 * [Best practices](usage/best-practices.md)
 
 ## Fora API
