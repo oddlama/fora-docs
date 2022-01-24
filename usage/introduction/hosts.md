@@ -4,7 +4,7 @@ A host declares a single remote machine, on which scripts can be executed.
 Hosts can override and set variables in their respective host module file.
 
 By default, the path to this file is `hosts/<name>.py`, relative to the inventory.
-If it exists, it will be loaded and it's globals will become the host's variables.
+If it exists, it will be loaded and its globals will become the host's variables.
 
 All special attributes of a host are documented in [`HostWrapper`](../writing-deploys/TODO/).
 As for the inventories, you can regard host modules as an "instance" of this wrapper class.
@@ -47,4 +47,15 @@ packages_to_install = ["neovim"]
 When the connection to a host is established, its `connection` variable will be
 set to the active connection. This means you can directly interact with the host
 in a script by using the functions given by this connection object.
-Have a look at [`Connection`](TODO) class for a reference.
+Have a look at the [`Connection`](TODO) class for a reference.
+
+# Groups
+
+A group defines variables that and can be inherited by other groups or hosts.
+Hosts always inherit all variables from their groups, while groups only inherit
+variables from groups they (transitively) depend on, to make sure no ambiguous or
+conflicting variables are defined.
+
+In principle, group modules function entirely analogous to host modules,
+except that they are only used to define shared global variables.
+By default, an inventory tries to load group modules from `groups/<name>.py`, relative to the inventory.
