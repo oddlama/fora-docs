@@ -52,9 +52,11 @@ Have a look at the [`Connection`](TODO) class for a reference.
 # Groups
 
 A group defines variables that and can be inherited by other groups or hosts.
-Hosts always inherit all variables from their groups, while groups only inherit
-variables from groups they (transitively) depend on, to make sure no ambiguous or
-conflicting variables are defined.
+The groups of a host are first sorted by load-order respecting inter-group dependencies.
+A group only has access to variables from the groups loaded before them, and the
+host always inherits all variables from the last loaded group (which will include the variables
+from all previously loaded groups). Is this done to make sure all ambiguous or
+conflicting variables definitions are detected.
 
 In principle, group modules function entirely analogous to host modules,
 except that they are only used to define shared global variables.

@@ -25,7 +25,6 @@ from fora import host, inventory
 print(inventory.loaded_hosts)
 
 # Check whether the host belongs to a specific group.
-# This includes transitive group dependencies.
 if "desktops" in host.groups:
 	# ...
 

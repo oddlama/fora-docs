@@ -1,6 +1,6 @@
 # Best practices
 
-### `name=""` everything
+### `name="..."` everything.
 
 All operations support the `name=` parameter which allows you to describe what it is doing.
 This will make following the output much easier.
@@ -11,7 +11,7 @@ This will lead to a strange coupling between an inventory and scripts.
 If you need to track global state, please create an additional python module
 just for this purpose, or avoid it in the first place.
 
-### Use the type checked API
+### Use the type checked API.
 
 Fora is fully typed. While it is more verbose, this allows you
 to use certain typed variables from an imported wrapper instead of

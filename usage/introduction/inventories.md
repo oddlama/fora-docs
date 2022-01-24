@@ -75,23 +75,22 @@ This will show a summary of all declared hosts and groups. For each host, it add
 
 ### Setting global variables from the inventory
 
-Especially when managing several inventories (for example staging and production), you may want to set global variables (like API keys) from your inventory definition. You can do this by defining a method called `global_variables()`.
+Especially when managing several inventories (for example staging and production), you may want to set global variables (like API keys) from your inventory definition.
+You can do this simply by defining a global variable or method that isn't a special inventory variable.
+To keep variables private to your inventory, use a leading underscore like `_variable`.
 
 {% code title="inventory_staging.py" %}
 ```python
 import os
 
-def global_variables():
-    return dict(api_key=os.getenv("API_KEY_STAGING"))
+# Global
+api_key = os.getenv("API_KEY_STAGING")
 
-hosts = [...]
-
-# If your inventories only differ regarding global variables, you
-# may of course import definitions from other inventories.
+# You may of course import definitions from other inventories to avoid repetition.
 from other_inventory import hosts
 ```
 {% endcode %}
 
 ### Overwriting other behavior
 
-Similar to how `global_variables()` can be overwritten to define global variables, you may overwrite any public method defined in the [`InventoryWrapper`](../writing-deploys/TODO/).
+You may overwrite any public method defined in the [`InventoryWrapper`](../writing-deploys/TODO/) to further customize the behavior of the inventory.
