@@ -8,8 +8,7 @@
 
 * [Introduction](usage/introduction/README.md)
   * [Inventories](usage/introduction/inventories.md)
-  * [Hosts](usage/introduction/hosts.md)
-  * [Groups](usage/introduction/groups.md)
+  * [Hosts & Groups](usage/introduction/hosts\_and\_groups.md)
   * [Scripts](usage/introduction/scripts.md)
 * [Writing a deploy from scratch](usage/writing-a-deploy-from-scratch.md)
 * [Best practices](usage/best-practices.md)
