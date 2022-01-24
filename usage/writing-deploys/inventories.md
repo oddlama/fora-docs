@@ -3,7 +3,7 @@
 An inventory is either an inventory module file like `inventory.py`, or an ad-hoc
 url like `example.com` or `root@localhost`. Usually an inventory is defined as a module.
 
-All special attributes that can be defined by an inventory are documented in [InventoryWrapper](TODO).
+All special attributes that can be defined by an inventory are documented in [`InventoryWrapper`](TODO).
 For simplicity, you can regard your inventory module like an "instance" of this wrapper class.
 You can override the documented attributes and functions to modify it to you needs.
 
@@ -99,11 +99,11 @@ hosts = [...]
 
 # If your inventories only differ regarding global variables, you
 # may of course import definitions from other inventories.
-#from other_inventory import hosts
+from other_inventory import hosts
 ```
 {% endcode %}
 
 ### Overwriting other behavior
 
 Similar to how `global_variables()` can be overwritten to define global variables,
-you may overwrite any public method defined in the [InventoryWrapper](TODO).
+you may overwrite any public method defined in the [`InventoryWrapper`](TODO).
