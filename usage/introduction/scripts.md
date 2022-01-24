@@ -41,8 +41,22 @@ This allows you to simply specify the target state instead of having to repeated
 
 An overview of all availabe operations can be found in the [Operations](TODO) section.
 
-### Default variables
+### Script default variables
+
+An important concept for scripts are script-specific variables.
+
+{% tabs %}
+{% tab title="deploy.py" %}
+```python
+from fora.operations import local, files
+
+local.script()
+```
+{% endtab %}
+{% endtabs %}
 
 ### Parameters
+
+To allow truly modular scripts.
 
 ### Remote defaults
