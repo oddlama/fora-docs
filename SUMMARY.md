@@ -20,5 +20,4 @@
 ## Examples
 
 * [Managing dotfiles](examples/dotfiles.md)
-* [Modular deploy](examples/modular-deploy.md)
 * [Using secrets](examples/using-secrets.md)
