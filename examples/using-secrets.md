@@ -66,7 +66,7 @@ secrets = toml.loads(_decrypted_toml)
 {% endcode %}
 {% endtab %}
 {% tab title="secrets.toml" %}
-```python
+```toml
 [desktops]
 root_password_hash = "$6$3gtzs4..."
 ```
