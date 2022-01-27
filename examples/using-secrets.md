@@ -9,9 +9,10 @@ While there are different ways to achieve the same things, I recommend decryptin
 storage in your inventory. This is beneficial because groups might be executed multiple times
 (once for each host that uses it), and this way you only have to decrypt once.
 
-The general structure you can use for any type of encryption is to
-load a global dictionary containing the secret values when
-the inventory is loaded. This variable can then be acccessed
+### Universal example
+
+Generally, you can provide a global dictionary containing the secret values when
+the inventory is loaded. This allows those secrets to be accessed
 anywhere in your deploy.
 
 {% tabs %}
