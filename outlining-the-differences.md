@@ -184,7 +184,7 @@ I wanted to encourage writing clean, simple and self-contained deploy scripts, w
 
 Keeping the tool lightweight increases maintainability for everyone involved. Fewer things can change or break, and fewer things need to be kept updated.
 
-If you for example need to store a secret, you can already choose from a lot of good python libraries. There's no need for Fora to implement any of this. Refer to the [Using secrets](examples/using-secrets.md) section for more information.
+If you for example need to store a secret, you can already choose from a lot of good python libraries. There's no need for Fora to implement any of this. Refer to the [using-secrets.md](examples/using-secrets.md "mention") section for more information.
 
 ### ...generally reduces boilerplate where possible.
 

@@ -2,7 +2,7 @@
 
 ## What is Fora?
 
-Fora is an infrastructure and configuration management tool inspired by [Ansible](https://www.ansible.com) and [pyinfa](https://pyinfra.com). It can be used for machine provisioning and configuration management. See [how it differs](usage/features.md) from existing tools.
+Fora is an infrastructure and configuration management tool inspired by [Ansible](https://www.ansible.com) and [pyinfa](https://pyinfra.com). It can be used for machine provisioning and configuration management. See [how it differs](outlining-the-differences.md#how-is-fora-different-from-existing-tools) from existing tools.
 
 ## Installation & Quickstart
 
@@ -36,12 +36,10 @@ These scripts are executed against an inventory, or a specific remote host (usua
 fora root@example.com deploy.py
 ```
 
-To start with your own (more complex) deploy, you can have Fora create a scaffolding in an empty directory.
-There are [different scaffoldings](TODO) available for different use-cases.
+To start with your own (more complex) deploy, you can have Fora create a scaffolding in an empty directory. There are [different scaffoldings](usage/introduction/#deploy-structure) available for different use-cases.
 
 ```bash
 fora --init minimal
 ```
 
-Fora can do a lot more than this, which is explained in the [Usage](./usage) section.
-If you are interested in how Fora is different from existing tools, have a look at [TODO](./introduction-and-short-how-to-do-this-examples-for-people-who-know-other-tools).
+Fora can do a lot more than this, which is explained in the [Broken link](broken-reference "mention") section. If you are interested in how Fora is different from existing tools, have a look at [outlining-the-differences.md](outlining-the-differences.md "mention").

@@ -1,5 +1,5 @@
 # Frequently Asked Questions
 
-#### Q: Why?
+### Q: Why?
 
-**A:** [How Fora is different from existing tools](outlining-the-differences.md).
+**A:** See [outlining-the-differences.md](outlining-the-differences.md "mention") for more information on how Fora differs from existing tools.&#x20;

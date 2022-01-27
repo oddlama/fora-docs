@@ -2,10 +2,10 @@
 
 A deploy is a collection of several components:
 
-* [**Inventories.**](../writing-deploys/TODO/) Collections of hosts, against which your scripts run. Either defined by a file, or by specifying a single hostname like `root@example.com` for ad-hoc runs.
-* [**Hosts.**](../writing-deploys/TODO/) Host definitions allow you to assign variables and groups to specific hosts.
-* [**Groups.**](../writing-deploys/TODO/) Hosts inherit the variables defined by the groups they belong to. All hosts implicitly belong to the `all` group, which can be used to define global variables.
-* [**Scripts.**](../writing-deploys/TODO/) Regular python scripts specifying what should be done on the remote hosts.
+* [**Inventories.**](inventories.md) Collections of hosts, against which your scripts run. Either defined by a file, or by specifying a single hostname like `root@example.com` for ad-hoc runs.
+* [**Hosts.**](hosts\_and\_groups.md#hosts) Host definitions allow you to assign variables and groups to specific hosts.
+* [**Groups.**](hosts\_and\_groups.md#groups) Hosts inherit the variables defined by the groups they belong to. All hosts implicitly belong to the `all` group, which can be used to define global variables.
+* [**Scripts.**](scripts.md) Regular python scripts specifying what should be done on the remote hosts.
 
 Fora always requires an inventory and a script to run. Here is an example using each of the above components:
 
@@ -142,4 +142,4 @@ A variation of the modular layout that defines two separate inventories to allow
 {% endtab %}
 {% endtabs %}
 
-You can use `fora --init <layout>` in an empty directory to initialize it with a specific deploy structure. See the included [Examples](../TODO/) to see how different layouts may be used.
+You can use `fora --init <layout>` in an empty directory to initialize it with a specific deploy structure. See the included [Broken link](broken-reference "mention") to see how different layouts may be used.
