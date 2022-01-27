@@ -1,6 +1,9 @@
 # fora.types
 
 ## <mark style="color:red;">class</mark> types.ScriptWrapper
+## <mark style="color:gray;">class</mark> types.ScriptWrapper
+## <mark style="color:grey;">class</mark> types.ScriptWrapper
+## <mark style="color:black;">class</mark> types.ScriptWrapper
 
 A mockup type for script modules. This is not the actual type of an instanciated module, but will reflect some of it's properties better than ModuleType. While this class is mainly used to aid type-checking, its properties are transferred to the actual instanciated module before the module is executed.
 
