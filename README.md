@@ -42,4 +42,4 @@ To start with your own (more complex) deploy, you can have Fora create a scaffol
 fora --init minimal
 ```
 
-Fora can do a lot more than this, which is explained in the [Usage](usage/README.md "mention") section. If you are interested in how Fora is different from existing tools, have a look at [outlining-the-differences.md](outlining-the-differences.md "mention").
+Fora can do a lot more than this, which is explained in the [introduction](usage/introduction/ "mention") section. If you are interested in how Fora is different from existing tools, have a look at [outlining-the-differences.md](outlining-the-differences.md "mention").

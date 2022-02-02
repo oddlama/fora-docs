@@ -2,8 +2,7 @@
 
 An inventory is either an inventory module file like `inventory.py`, or an ad-hoc url like `example.com` or `root@localhost`. Usually an inventory is defined as a module.
 
-All special attributes that can be defined by an inventory are documented in [`InventoryWrapper`](api/fora/inventory_wrapper.md#class-inventory_wrapper.InventoryWrapper).
-For all means and purposes, you can regard your inventory module as an "instance" of this wrapper class. You can override the documented attributes and functions to modify it to your needs.
+All special attributes that can be defined by an inventory are documented in [`InventoryWrapper`](../../api/fora/inventory\_wrapper.md#class-inventory\_wrapper.inventorywrapper). For all means and purposes, you can regard your inventory module as an "instance" of this wrapper class. You can override the documented attributes and functions to modify it to your needs.
 
 The two main inventory attributes are `hosts` and `groups` which are used to declare the hosts and groups that belong to the inventory.
 
@@ -24,7 +23,7 @@ hosts = ["host.example.com",    # same as ssh://host.example.com. The host's nam
 {% endtab %}
 
 {% tab title="inventory.py" %}
-If you want to specify additional information, such as the host's groups, choosing a specific name or specifying the host module file, you can do so using a `dict` or by using the [`HostDeclaration`](api/fora/inventory_wrapper.md#class-inventory_wrapper.HostDeclaration) type.
+If you want to specify additional information, such as the host's groups, choosing a specific name or specifying the host module file, you can do so using a `dict` or by using the [`HostDeclaration`](../../api/fora/inventory\_wrapper.md#class-inventory\_wrapper.hostdeclaration) type.
 
 Specifying either a url or a name is mandatory. If you leave the url empty, you need to specify the url or a connector later in the host module.
 
@@ -75,9 +74,7 @@ This will show a summary of all declared hosts and groups. For each host, it add
 
 ### Setting global variables from the inventory
 
-Especially when managing several inventories (for example staging and production), you may want to set global variables (like API keys) from your inventory definition.
-You can do this simply by defining a global variable or method that isn't a special inventory variable.
-To keep variables private to your inventory, use a leading underscore like `_variable`.
+Especially when managing several inventories (for example staging and production), you may want to set global variables (like API keys) from your inventory definition. You can do this simply by defining a global variable or method that isn't a special inventory variable. To keep variables private to your inventory, use a leading underscore like `_variable`.
 
 {% code title="inventory_staging.py" %}
 ```python
@@ -93,4 +90,4 @@ from other_inventory import hosts
 
 ### Overwriting other behavior
 
-You may overwrite any public method defined in the [`InventoryWrapper`](api/fora/inventory_wrapper.md#class-inventory_wrapper.InventoryWrapper) to further customize the behavior of the inventory.
+You may overwrite any public method defined in the [`InventoryWrapper`](../../api/fora/inventory\_wrapper.md#class-inventory\_wrapper.inventorywrapper) to further customize the behavior of the inventory.

@@ -1,19 +1,12 @@
 # Scripts
 
-Scripts are in fact just regular python scripts executed for each host.
-Surprising, I know. In a script, Fora behaves like a regular library.
-Just remember that your inventory will already have been been loaded,
-and a connection to the current host will have been established.
+Scripts are in fact just regular python scripts executed for each host. Surprising, I know. In a script, Fora behaves like a regular library. Just remember that your inventory will already have been been loaded, and a connection to the current host will have been established.
 
-Scripts are always executed in their containing folder. This makes
-it easy to bundle files related to the script in folders relative to it.
+Scripts are always executed in their containing folder. This makes it easy to bundle files related to the script in folders relative to it.
 
 ### Accessing global state
 
-You can access the inventory and the current host via the
-exposed global state in the main `fora` module. You can use
-these to directly execute commands on the host, or to retrieve
-variables from a host or inventory.
+You can access the inventory and the current host via the exposed global state in the main `fora` module. You can use these to directly execute commands on the host, or to retrieve variables from a host or inventory.
 
 {% tabs %}
 {% tab title="deploy.py" %}
@@ -36,16 +29,11 @@ print(host.connection.run(["echo", f"Hello from the other side ({host.name})"]).
 
 ### Using operations
 
-The most important part of your deploy scripts will be calling operations to modify the remote host.
-Operations examine the host's current state and execute just the neccessary commands to bring it to the target state.
-Operations are idempotent functions, so calling them multiple times doesn't affect the final outcome.
+The most important part of your deploy scripts will be calling operations to modify the remote host. Operations examine the host's current state and execute just the neccessary commands to bring it to the target state. Operations are idempotent functions, so calling them multiple times doesn't affect the final outcome.
 
-- All operations return a [`OperationResult`](api/fora/operations/api.md#class-api.operationresult) object, which can be used to
-examine the initial and target state of the host regarding this operation.
-- If an operation fails and `check=False` has not been passed to the operation,
-the script is automatically aborted.
-- All operations support an optional `name="Description of what is being done"` parameter, which will be printed
-on execution so it is easier to follow what is being done.
+* All operations return a [`OperationResult`](../../api/fora/operations/api.md#class-api.operationresult) object, which can be used to examine the initial and target state of the host regarding this operation.
+* If an operation fails and `check=False` has not been passed to the operation, the script is automatically aborted.
+* All operations support an optional `name="Description of what is being done"` parameter, which will be printed on execution so it is easier to follow what is being done.
 
 {% tabs %}
 {% tab title="deploy.py" %}
@@ -70,17 +58,11 @@ if ret.changed:
 {% endtab %}
 {% endtabs %}
 
-An overview of all available operations can be found in the [Operation Index](api/index\_operations.md "mention") section.
-You may of course also write your own operations. For this I recommend reading the implementation
-of some existing operations.
+An overview of all available operations can be found in the [index\_operations.md](api/index\_operations.md "mention") section. You may of course also write your own operations. For this I recommend reading the implementation of some existing operations.
 
 ### Variables and fallback values
 
-You can customize your script's behavior based on host variables.
-Usually, scripts will have a set of variables that can be customized by the host,
-but also need a fallback value. For this, you can define a global variable in your script
-with the same name as the expected host variable. If the host has no such variable, accessing
-`host.myvariable` will automatically return your global fallback value in that case.
+You can customize your script's behavior based on host variables. Usually, scripts will have a set of variables that can be customized by the host, but also need a fallback value. For this, you can define a global variable in your script with the same name as the expected host variable. If the host has no such variable, accessing `host.myvariable` will automatically return your global fallback value in that case.
 
 {% tabs %}
 {% tab title="deploy.py" %}
@@ -91,6 +73,7 @@ motd = f"Hello from {host.name}!"
 files.upload_content(dest="/etc/motd", content=host.motd)
 ```
 {% endtab %}
+
 {% tab title="hosts/myhost.py" %}
 ```python
 # If this variable was removed, the fallback value in the script would be used
@@ -101,8 +84,7 @@ motd = "(╯°□°）╯︵ ┻━┻"
 
 ### Parameters
 
-Instead of customizing script behavior based on host variables, you might want
-to write a script that can be reused in your deploy and should accept parameters.
+Instead of customizing script behavior based on host variables, you might want to write a script that can be reused in your deploy and should accept parameters.
 
 {% tabs %}
 {% tab title="deploy.py" %}
@@ -113,6 +95,7 @@ local.script("add_user_with_ssh.py", params=dict(user="someuser", authorized_key
 local.script("add_user_with_ssh.py", params=dict(user="seconduser"))
 ```
 {% endtab %}
+
 {% tab title="add_user_with_ssh.py" %}
 ```python
 from fora import host
@@ -137,22 +120,18 @@ if len(params.authorized_keys) > 0:
 
 ### Remote defaults
 
-If parameters like `owner=`, `group=` or `mode=` are not given, they will default
-to some value initially specified by the inventory as [`base_remote_settings()`](api/fora/types.md#def-InventoryWrapper.base_remote_settings).
+If parameters like `owner=`, `group=` or `mode=` are not given, they will default to some value initially specified by the inventory as [`base_remote_settings()`](../../api/fora/inventory\_wrapper.md#def-inventorywrapper.base\_remote\_settings).
 
-When configuring services, you often need to create many files with the same specific owner, group and mode.
-Scripts provide a context manager [`defaults()`](api/fora/types.md#def-ScriptWrapper.defaults) to temporarily change these defaults
-to avoid repetition. These defaults also specify process information, such as which user is used to
-run commands on the remote. Here is an overview over what can be modified:
+When configuring services, you often need to create many files with the same specific owner, group and mode. Scripts provide a context manager [`defaults()`](../../api/fora/types.md#def-scriptwrapper.defaults) to temporarily change these defaults to avoid repetition. These defaults also specify process information, such as which user is used to run commands on the remote. Here is an overview over what can be modified:
 
-- `owner` - the owner for new files and directories
-- `group` - the group for new files and directories
-- `file_mode` - the mode for new files (determines `mode=` on operations such as `files.upload`)
-- `dir_mode` - the mode for new directories (determines `mode=` on operations such as `files.directory`)
-- `umask` - the effective umask for remote commands
-- `cwd` - the working directory for remote commands
-- `as_user` - the user as which the remote commands are executed
-- `as_group` - the group as which the remote commands are executed
+* `owner` - the owner for new files and directories
+* `group` - the group for new files and directories
+* `file_mode` - the mode for new files (determines `mode=` on operations such as `files.upload`)
+* `dir_mode` - the mode for new directories (determines `mode=` on operations such as `files.directory`)
+* `umask` - the effective umask for remote commands
+* `cwd` - the working directory for remote commands
+* `as_user` - the user as which the remote commands are executed
+* `as_group` - the group as which the remote commands are executed
 
 {% tabs %}
 {% tab title="deploy_website.py" %}
