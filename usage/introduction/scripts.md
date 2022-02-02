@@ -40,7 +40,7 @@ The most important part of your deploy scripts will be calling operations to mod
 Operations examine the host's current state and execute just the neccessary commands to bring it to the target state.
 Operations are idempotent functions, so calling them multiple times doesn't affect the final outcome.
 
-- All operations return a [`OperationResult`](TODO) object, which can be used to
+- All operations return a [`OperationResult`](api/fora/operations/api.md#class-api.operationresult) object, which can be used to
 examine the initial and target state of the host regarding this operation.
 - If an operation fails and `check=False` has not been passed to the operation,
 the script is automatically aborted.
@@ -70,7 +70,7 @@ if ret.changed:
 {% endtab %}
 {% endtabs %}
 
-An overview of all available operations can be found in the [Operations](TODO) section.
+An overview of all available operations can be found in the [Operation Index](api/index\_operations.md "mention") section.
 You may of course also write your own operations. For this I recommend reading the implementation
 of some existing operations.
 
@@ -138,10 +138,10 @@ if len(params.authorized_keys) > 0:
 ### Remote defaults
 
 If parameters like `owner=`, `group=` or `mode=` are not given, they will default
-to some value initially specified by the inventory as [`base_remote_settings()`](TODO).
+to some value initially specified by the inventory as [`base_remote_settings()`](api/fora/types.md#def-InventoryWrapper.base_remote_settings).
 
 When configuring services, you often need to create many files with the same specific owner, group and mode.
-Scripts provide a context manager [`defaults()`](TODO) to temporarily change these defaults
+Scripts provide a context manager [`defaults()`](api/fora/types.md#def-ScriptWrapper.defaults) to temporarily change these defaults
 to avoid repetition. These defaults also specify process information, such as which user is used to
 run commands on the remote. Here is an overview over what can be modified:
 

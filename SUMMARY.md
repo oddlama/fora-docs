@@ -12,7 +12,7 @@
   * [Scripts](usage/introduction/scripts.md)
 * [Best practices](usage/best-practices.md)
 
-## Fora API
+## API
 
 * [Operations Index](api/index\_operations.md)
 * [Fora API](api/fora.md)

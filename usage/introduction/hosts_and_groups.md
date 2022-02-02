@@ -6,7 +6,7 @@ Hosts can override and set variables in their respective host module file.
 By default, the path to this file is `hosts/<name>.py`, relative to the inventory.
 If it exists, it will be loaded and its globals will become the host's variables.
 
-All special attributes of a host are documented in [`HostWrapper`](../writing-deploys/TODO/).
+All special attributes of a host are documented in [`HostWrapper`](api/fora/types.md#class-types.HostWrapper).
 As for the inventories, you can regard host modules as an "instance" of this wrapper class.
 You can override the documented attributes and functions to modify it to your needs.
 
@@ -47,7 +47,7 @@ packages_to_install = ["neovim"]
 When the connection to a host is established, its `connection` variable will be
 set to the active connection. This means you can directly interact with the host
 in a script by using the functions given by this connection object.
-Have a look at the [`Connection`](TODO) class for a reference.
+Have a look at the [`Connection`](api/fora/connection.md#class-connection.Connection) class for a reference.
 
 # Groups
 
