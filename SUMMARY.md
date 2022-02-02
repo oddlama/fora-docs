@@ -21,3 +21,7 @@
 
 * [Managing dotfiles](examples/dotfiles.md)
 * [Using secrets](examples/using-secrets.md)
+
+***
+
+* [Operationsaaa](operationsaaa.md)
