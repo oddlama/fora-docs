@@ -140,14 +140,22 @@ of the parameters for individual hosts. If a `dict` is given, it is automaticall
 used to construct a HostDeclaration. Providing a single `str` is equivalent to
 `HostDeclaration(url=the_str)`.
 
+{% hint style="warning" %}
 Duplicate entries (same name) will cause an exception to be raised when the
 inventory is loaded.
+{% endhint %}
 
 Example:
 
-    hosts = [HostDeclaration(url="localhost", groups=["desktops"])),
-             dict(url="host.example.com", name="myhost"),
-             "example.com"]
+{% tabs %}
+{% tab title="inventory.py" %}
+```python
+hosts = [HostDeclaration(url="localhost", groups=["desktops"])),
+            dict(url="host.example.com", name="myhost"),
+            "example.com"]
+```
+{% endtab %}
+{% endtabs %}
 
 #### <mark style="color:yellow;">attr</mark> `groups`
 
@@ -162,14 +170,22 @@ used to construct a GroupDeclaration. Providing a single `str` is equivalent to
 
 The global `all` group will always be added to this list, if it isn't already.
 
+{% hint style="warning" %}
 Duplicate entries (same name) will cause an exception to be raised when the
 inventory is loaded.
+{% endhint %}
 
 Example:
 
-    groups = [GroupDeclaration(name="desktops", after=["archlinux"]),
-              dict(name="servers", after=["archlinux"]),
-              "archlinux"]
+{% tabs %}
+{% tab title="inventory.py" %}
+```python
+groups = [GroupDeclaration(name="desktops", after=["archlinux"]),
+            dict(name="servers", after=["archlinux"]),
+            "archlinux"]
+```
+{% endtab %}
+{% endtabs %}
 
 #### <mark style="color:yellow;">attr</mark> `loaded_hosts`
 

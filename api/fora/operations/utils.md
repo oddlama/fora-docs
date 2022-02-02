@@ -135,5 +135,5 @@ returns a failed status with the given error message. Also returns a OperationEr
 the callee want's to raise and exception.
 
 This is useful for meta-operations, that have a failure condition before the
-required sub-operation is determined (e.g. system.package() can call different package
+required sub-operation is determined (e.g. [`system.package()`](system.md#def-system.package) can call different package
 manager's package() operation, but can also fail to find a suitable one).

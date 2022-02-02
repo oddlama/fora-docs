@@ -40,7 +40,7 @@ real_pw = getpass.getpass()
 password_hash = crypt.crypt(real_pw, crypt.mksalt(crypt.METHOD_SHA512))
 ```
 
-### Example:
+#### Examples
 
 ```python
 system.user(
@@ -112,7 +112,7 @@ def system.group(group: str, present: bool = True,
 
 Creates, modifies or deletes a unix group.
 
-### Example:
+#### Examples
 
 ```python
 system.group(
@@ -148,7 +148,7 @@ def system.package(packages: list[str], present: bool = True,
 
 Adds or removes system packages by detecting a supported init system to execute the operation.
 
-### Example:
+#### Examples
 
 ```python
 system.package(
@@ -188,7 +188,7 @@ def system.service(service: str, state: Optional[str] = None,
 
 Manages a system service by detecting a supported init system to execute the operation.
 
-### Example:
+#### Examples
 
 ```python
 system.service(

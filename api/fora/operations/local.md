@@ -20,13 +20,15 @@ supplying a `params` dictionary. The script declares its parameters
 by annotating them. (The annotation then transparently extracts the
 value from a separately passed global variable).
 
-    @Params
-    class params:
-        username: str
-        website_title: str = "Default website title."
+```python
+@Params
+class params:
+    username: str
+    website_title: str = "Default website title."
 
-    # Use a parameter
-    print(params.username)
+# Use a parameter
+print(params.username)
+```
 
 #### Parameters
 

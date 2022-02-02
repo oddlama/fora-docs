@@ -134,12 +134,16 @@ group to provide default attributes and methods for the group.
 All functions and members from this wrapper will be implicitly available
 on the wrapped group module. This means you can do the following
 
-    print(name)       # Access this group's name
+```python
+print(name)       # Access this group's name
+```
 
 instead of having to first import the wrapper API:
 
-    from fora import group as this
-    print(this.name)
+```python
+from fora import group as this
+print(this.name)
+```
 
 ### Attributes
 
@@ -159,13 +163,17 @@ host to provide default attributes and methods for the host.
 All functions and members from this wrapper will be implicitly available
 on the wrapped host module. This means you can do the following
 
-    url = "ssh://root@localhost" # Use this url to connect
-    print(name)                  # Access this hosts's name
+```python
+url = "ssh://root@localhost" # Use this url to connect
+print(name)                  # Access this hosts's name
+```
 
 instead of having to first import the wrapper API:
 
-    from fora import group as this
-    print(this.name)
+```python
+from fora import group as this
+print(this.name)
+```
 
 ### Attributes
 
@@ -292,14 +300,18 @@ Returns a context manager to incrementally change the remote execution defaults.
 This function is implicitly available on the wrapped script module.
 This means you can do the following
 
-    with defaults(owner="root", file_mode="644", dir_mode="755"):
-        # ... execute some operations
+```python
+with defaults(owner="root", file_mode="644", dir_mode="755"):
+    # ... execute some operations
+```
 
 instead of having to first import the wrapper API:
 
-    from fora import script
-    with script.defaults(owner="root", file_mode="644", dir_mode="755"):
-        # ... execute some operations
+```python
+from fora import script
+with script.defaults(owner="root", file_mode="644", dir_mode="755"):
+    # ... execute some operations
+```
 
 ### <mark style="color:yellow;">def</mark> `ScriptWrapper.current_defaults()`
 
@@ -324,14 +336,18 @@ Decorator used to declare script parameters.
 This function is implicitly available on the wrapped script module.
 This means you can do the following
 
-    @Params
-    class params:
-        my_parameter: str
+```python
+@Params
+class params:
+    my_parameter: str
+```
 
 instead of having to first import the wrapper API:
 
-    from fora import script
+```python
+from fora import script
 
-    @script.Params
-    class params:
-        my_parameter: str
+@script.Params
+class params:
+    my_parameter: str
+```
