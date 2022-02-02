@@ -12,13 +12,13 @@
 
  -  [`files.link()`](api/fora/operations/files.md#link) ‒ Creates, deletes or updates the given symbolic link.
 
- -  [`files.upload_content()`](api/fora/operations/files.md#upload_content) ‒ Uploads the given content as a file to the remote host.
+ -  [`files.upload_content()`](api/fora/operations/files.md#upload\_content) ‒ Uploads the given content as a file to the remote host.
 
  -  [`files.upload()`](api/fora/operations/files.md#upload) ‒ Uploads the given file or to the remote host.
 
- -  [`files.upload_dir()`](api/fora/operations/files.md#upload_dir) ‒ Uploads the given directory to the remote host.
+ -  [`files.upload_dir()`](api/fora/operations/files.md#upload\_dir) ‒ Uploads the given directory to the remote host.
 
- -  [`files.template_content()`](api/fora/operations/files.md#template_content) ‒ Templates the given content and uploads the result to the remote host.
+ -  [`files.template_content()`](api/fora/operations/files.md#template\_content) ‒ Templates the given content and uploads the result to the remote host.
 
  -  [`files.template()`](api/fora/operations/files.md#template) ‒ Templates the given file and uploads the result to the remote host.
 
@@ -56,6 +56,6 @@
 
 ## [`operations.systemd`](api/fora/operations/systemd.md)
 
- -  [`systemd.daemon_reload()`](api/fora/operations/systemd.md#daemon_reload) ‒ Manages a systemd unit.
+ -  [`systemd.daemon_reload()`](api/fora/operations/systemd.md#daemon\_reload) ‒ Manages a systemd unit.
 
  -  [`systemd.service()`](api/fora/operations/systemd.md#service) ‒ Manages a systemd unit.
