@@ -2,7 +2,7 @@
 
 Provides operations related to git.
 
-## <mark style="color:yellow;">`def`</mark> `git.repo()`
+## <mark style="color:yellow;">def</mark> `git.repo()`
 
 ```python
 def git.repo(url: str, path: str, branch_or_tag: Optional[str] = None, 

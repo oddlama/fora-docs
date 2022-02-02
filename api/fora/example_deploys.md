@@ -2,7 +2,7 @@
 
 Provides example deploys, which can be used as a starting point.
 
-## <mark style="color:yellow;">`def`</mark> `example_deploys.init_structure_minimal()`
+## <mark style="color:yellow;">def</mark> `example_deploys.init_structure_minimal()`
 
 ```python
 def example_deploys.init_structure_minimal() -> None:
@@ -10,7 +10,7 @@ def example_deploys.init_structure_minimal() -> None:
 
 Creates a minimal deploy structure.
 
-## <mark style="color:yellow;">`def`</mark> `example_deploys.init_structure_flat()`
+## <mark style="color:yellow;">def</mark> `example_deploys.init_structure_flat()`
 
 ```python
 def example_deploys.init_structure_flat() -> None:
@@ -18,7 +18,7 @@ def example_deploys.init_structure_flat() -> None:
 
 Creates a flat deploy structure.
 
-## <mark style="color:yellow;">`def`</mark> `example_deploys.init_structure_dotfiles()`
+## <mark style="color:yellow;">def</mark> `example_deploys.init_structure_dotfiles()`
 
 ```python
 def example_deploys.init_structure_dotfiles() -> None:
@@ -26,7 +26,7 @@ def example_deploys.init_structure_dotfiles() -> None:
 
 Creates a dotfiles deploy structure.
 
-## <mark style="color:yellow;">`def`</mark> `example_deploys.init_structure_modular()`
+## <mark style="color:yellow;">def</mark> `example_deploys.init_structure_modular()`
 
 ```python
 def example_deploys.init_structure_modular() -> None:
@@ -34,7 +34,7 @@ def example_deploys.init_structure_modular() -> None:
 
 Creates a modular deploy structure.
 
-## <mark style="color:yellow;">`def`</mark> `example_deploys.init_structure_staging_prod()`
+## <mark style="color:yellow;">def</mark> `example_deploys.init_structure_staging_prod()`
 
 ```python
 def example_deploys.init_structure_staging_prod() -> None:
@@ -42,7 +42,7 @@ def example_deploys.init_structure_staging_prod() -> None:
 
 Creates a staging_prod deploy structure.
 
-## <mark style="color:yellow;">`def`</mark> `example_deploys.init_deploy_structure()`
+## <mark style="color:yellow;">def</mark> `example_deploys.init_deploy_structure()`
 
 ```python
 def example_deploys.init_deploy_structure(

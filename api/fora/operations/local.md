@@ -2,7 +2,7 @@
 
 Provides operations that are related to the local system on which the fora scripts are executed.
 
-## <mark style="color:yellow;">`def`</mark> `local.script()`
+## <mark style="color:yellow;">def</mark> `local.script()`
 
 ```python
 def local.script(script: str, recursive: bool = False, 

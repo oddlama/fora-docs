@@ -4,7 +4,7 @@ Provides utiliy functions for operations.
 
 ## Attributes
 
-### <mark style="color:yellow;">`attr`</mark>` utils.package_managers`
+### <mark style="color:yellow;">attr</mark> `utils.package_managers`
 
 ```python
 utils.package_managers: dict[str, Any] = {}
@@ -12,7 +12,7 @@ utils.package_managers: dict[str, Any] = {}
 
 All registered package managers as a map from (command name -> package function).
 
-### <mark style="color:yellow;">`attr`</mark>` utils.service_managers`
+### <mark style="color:yellow;">attr</mark> `utils.service_managers`
 
 ```python
 utils.service_managers: dict[str, Any] = {}
@@ -20,7 +20,7 @@ utils.service_managers: dict[str, Any] = {}
 
 All registered service managers as a map from (command name -> service function).
 
-## <mark style="color:yellow;">`def`</mark> `utils.find_command()`
+## <mark style="color:yellow;">def</mark> `utils.find_command()`
 
 ```python
 def utils.find_command(conn: Connection, 
@@ -31,7 +31,7 @@ def utils.find_command(conn: Connection,
 Searches for any of the commands provided as keys in `command_to_result_map`,
 and if found on the target system, returns the associated value from the map.
 
-## <mark style="color:yellow;">`def`</mark> `utils.package_manager()`
+## <mark style="color:yellow;">def</mark> `utils.package_manager()`
 
 ```python
 def utils.package_manager(command: str) -> Callable[[Callable], Callable]:
@@ -42,7 +42,7 @@ This will cause it to be registered such that system.package() can call this pac
 
 See [`pacman.package()`](api/fora/operations/pacman.md#package) for an example usage.
 
-## <mark style="color:yellow;">`def`</mark> `utils.service_manager()`
+## <mark style="color:yellow;">def</mark> `utils.service_manager()`
 
 ```python
 def utils.service_manager(command: str) -> Callable[[Callable], Callable]:
@@ -53,7 +53,7 @@ This will cause it to be registered such that system.service() can call this ser
 
 See [`systemd.service()`](api/fora/operations/systemd.md#service) for an example usage.
 
-## <mark style="color:yellow;">`def`</mark> `utils.generic_package()`
+## <mark style="color:yellow;">def</mark> `utils.generic_package()`
 
 ```python
 def utils.generic_package(op: Operation, packages: list[str], present: bool, 
@@ -81,7 +81,7 @@ to reach the target state.
 
  -  **uninstall**: A function that uninstalls the given package on the remote system.
 
-## <mark style="color:yellow;">`def`</mark> `utils.save_content()`
+## <mark style="color:yellow;">def</mark> `utils.save_content()`
 
 ```python
 def utils.save_content(op: Operation, content: Union[bytes, str], dest: str, 
@@ -107,7 +107,7 @@ if save_content is the main functionality. You must supply the op parameter.
 
  -  **group**: The file group. Uses the remote execution defaults if None.
 
-## <mark style="color:yellow;">`def`</mark> `utils.check_absolute_path()`
+## <mark style="color:yellow;">def</mark> `utils.check_absolute_path()`
 
 ```python
 def utils.check_absolute_path(path: str, path_desc: str) -> None:
@@ -121,7 +121,7 @@ Asserts that a given path is non empty and absolute.
 
  -  **path_desc**: Will be printed in case of error as a substitute for the invalid variable
 
-## <mark style="color:yellow;">`def`</mark> `utils.new_op_fail()`
+## <mark style="color:yellow;">def</mark> `utils.new_op_fail()`
 
 ```python
 def utils.new_op_fail(op_name: str, name: Optional[str], desc: str, 

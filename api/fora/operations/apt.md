@@ -2,7 +2,7 @@
 
 Provides operations related to the apt package manager.
 
-## <mark style="color:yellow;">`def`</mark> `apt.package()`
+## <mark style="color:yellow;">def</mark> `apt.package()`
 
 ```python
 def apt.package(packages: list[str], present: bool = True, 

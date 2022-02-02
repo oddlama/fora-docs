@@ -3,15 +3,15 @@
 Provides the top-level logic of fora such as
 the CLI interface and main script dispatching.
 
-## <mark style="color:red;">`class`</mark>` main.ArgumentParserError`
+## <mark style="color:red;">class</mark> `main.ArgumentParserError`
 
 Error class for argument parsing errors.
 
-## <mark style="color:red;">`class`</mark>` main.ThrowingArgumentParser`
+## <mark style="color:red;">class</mark> `main.ThrowingArgumentParser`
 
 An argument parser that throws when invalid argument types are passed.
 
-### <mark style="color:yellow;">`def`</mark> `error()`
+### <mark style="color:yellow;">def</mark> `error()`
 
 ```python
 def error(self, message: str) -> NoReturn:
@@ -19,11 +19,11 @@ def error(self, message: str) -> NoReturn:
 
 Raises an exception on error.
 
-## <mark style="color:red;">`class`</mark>` main.ActionImmediateFunction`
+## <mark style="color:red;">class</mark> `main.ActionImmediateFunction`
 
 An action that calls a function immediately when the argument is encountered.
 
-## <mark style="color:yellow;">`def`</mark> `main.main_run()`
+## <mark style="color:yellow;">def</mark> `main.main_run()`
 
 ```python
 def main.main_run(args: argparse.Namespace) -> None:
@@ -35,7 +35,7 @@ Main method used to run a script on an inventory.
 
  -  **args**: The parsed arguments
 
-## <mark style="color:yellow;">`def`</mark> `main.show_inventory()`
+## <mark style="color:yellow;">def</mark> `main.show_inventory()`
 
 ```python
 def main.show_inventory(inventory: str) -> None:
@@ -47,7 +47,7 @@ Display a summary of the given inventory.
 
  -  **inventory**: The inventory argument
 
-## <mark style="color:yellow;">`def`</mark> `main.main()`
+## <mark style="color:yellow;">def</mark> `main.main()`
 
 ```python
 def main.main(argv: Optional[list[str]] = None) -> None:

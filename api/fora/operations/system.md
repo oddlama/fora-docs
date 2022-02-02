@@ -2,7 +2,7 @@
 
 Provides operations related to the operating system such as user, group or service management.
 
-## <mark style="color:yellow;">`def`</mark> `system.user()`
+## <mark style="color:yellow;">def</mark> `system.user()`
 
 ```python
 def system.user(user: str, present: bool = True, uid: Optional[int] = None, 
@@ -98,7 +98,7 @@ system.user(
 
  -  **op**: The operation wrapper. Must not be supplied by the user.
 
-## <mark style="color:yellow;">`def`</mark> `system.group()`
+## <mark style="color:yellow;">def</mark> `system.group()`
 
 ```python
 def system.group(group: str, present: bool = True, 
@@ -136,7 +136,7 @@ system.group(
 
  -  **op**: The operation wrapper. Must not be supplied by the user.
 
-## <mark style="color:yellow;">`def`</mark> `system.package()`
+## <mark style="color:yellow;">def</mark> `system.package()`
 
 ```python
 def system.package(packages: list[str], present: bool = True, 
@@ -175,7 +175,7 @@ system.package(
     OperationErrors will be propagated. When False, any manually raised OperationError will
     be caught and `op.failure()` will be returned with the given message while continuing execution.
 
-## <mark style="color:yellow;">`def`</mark> `system.service()`
+## <mark style="color:yellow;">def</mark> `system.service()`
 
 ```python
 def system.service(service: str, state: Optional[str] = None, 

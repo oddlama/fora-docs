@@ -2,7 +2,7 @@
 
 Provides operations related to the portage package manager.
 
-## <mark style="color:yellow;">`def`</mark> `portage.package()`
+## <mark style="color:yellow;">def</mark> `portage.package()`
 
 ```python
 def portage.package(packages: list[str], present: bool = True, 

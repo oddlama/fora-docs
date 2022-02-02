@@ -2,13 +2,13 @@
 
 Defines the connector interface.
 
-## <mark style="color:red;">`class`</mark>` connector.CompletedRemoteCommand`
+## <mark style="color:red;">class</mark> `connector.CompletedRemoteCommand`
 
 The return value of `Connector.run()`, representing a finished remote process.
 
 ### Attributes
 
-#### <mark style="color:yellow;">`attr`</mark>` stdout`
+#### <mark style="color:yellow;">attr</mark> `stdout`
 
 ```python
 stdout: Optional[bytes]
@@ -17,7 +17,7 @@ stdout: Optional[bytes]
 The stdout of the remote command. If you need a string, but are not sure that the formatting is utf-8,
     be sure to decode with `errors="surrogateescape"` or `errors=backslashreplace` depending on your use.
 
-#### <mark style="color:yellow;">`attr`</mark>` stderr`
+#### <mark style="color:yellow;">attr</mark> `stderr`
 
 ```python
 stderr: Optional[bytes]
@@ -26,7 +26,7 @@ stderr: Optional[bytes]
 The stderr of the remote command. If you need a string, but are not sure that the formatting is utf-8,
     be sure to decode with `errors="surrogateescape"` or `errors=backslashreplace` depending on your use.
 
-#### <mark style="color:yellow;">`attr`</mark>` returncode`
+#### <mark style="color:yellow;">attr</mark> `returncode`
 
 ```python
 returncode: int
@@ -34,19 +34,19 @@ returncode: int
 
 The return code of the remote command.
 
-## <mark style="color:red;">`class`</mark>` connector.StatResult`
+## <mark style="color:red;">class</mark> `connector.StatResult`
 
 The return value of stat(), representing information about a remote file.
 The type will be one of [ "dir", "chr", "blk", "file", "fifo", "link", "sock", "other" ].
 If requested, the sha512sum of the file will be included.
 
-## <mark style="color:red;">`class`</mark>` connector.UserEntry`
+## <mark style="color:red;">class</mark> `connector.UserEntry`
 
 The result of a user query.
 
 ### Attributes
 
-#### <mark style="color:yellow;">`attr`</mark>` name`
+#### <mark style="color:yellow;">attr</mark> `name`
 
 ```python
 name: str
@@ -54,7 +54,7 @@ name: str
 
 The name of the user
 
-#### <mark style="color:yellow;">`attr`</mark>` uid`
+#### <mark style="color:yellow;">attr</mark> `uid`
 
 ```python
 uid: int
@@ -62,7 +62,7 @@ uid: int
 
 The numerical user id
 
-#### <mark style="color:yellow;">`attr`</mark>` group`
+#### <mark style="color:yellow;">attr</mark> `group`
 
 ```python
 group: str
@@ -70,7 +70,7 @@ group: str
 
 The name of the primary group
 
-#### <mark style="color:yellow;">`attr`</mark>` gid`
+#### <mark style="color:yellow;">attr</mark> `gid`
 
 ```python
 gid: int
@@ -78,7 +78,7 @@ gid: int
 
 The numerical primary group id
 
-#### <mark style="color:yellow;">`attr`</mark>` groups`
+#### <mark style="color:yellow;">attr</mark> `groups`
 
 ```python
 groups: list[str]
@@ -86,7 +86,7 @@ groups: list[str]
 
 All names of the supplementary groups this user belongs to
 
-#### <mark style="color:yellow;">`attr`</mark>` password_hash`
+#### <mark style="color:yellow;">attr</mark> `password_hash`
 
 ```python
 password_hash: Optional[str]
@@ -94,7 +94,7 @@ password_hash: Optional[str]
 
 The password hash from shadow, if requested.
 
-#### <mark style="color:yellow;">`attr`</mark>` gecos`
+#### <mark style="color:yellow;">attr</mark> `gecos`
 
 ```python
 gecos: str
@@ -102,7 +102,7 @@ gecos: str
 
 The comment (GECOS) field of the user
 
-#### <mark style="color:yellow;">`attr`</mark>` home`
+#### <mark style="color:yellow;">attr</mark> `home`
 
 ```python
 home: str
@@ -110,7 +110,7 @@ home: str
 
 The home directory of the user
 
-#### <mark style="color:yellow;">`attr`</mark>` shell`
+#### <mark style="color:yellow;">attr</mark> `shell`
 
 ```python
 shell: str
@@ -118,13 +118,13 @@ shell: str
 
 The default shell of the user
 
-## <mark style="color:red;">`class`</mark>` connector.GroupEntry`
+## <mark style="color:red;">class</mark> `connector.GroupEntry`
 
 The result of a group query.
 
 ### Attributes
 
-#### <mark style="color:yellow;">`attr`</mark>` name`
+#### <mark style="color:yellow;">attr</mark> `name`
 
 ```python
 name: str
@@ -132,7 +132,7 @@ name: str
 
 The name of the group
 
-#### <mark style="color:yellow;">`attr`</mark>` gid`
+#### <mark style="color:yellow;">attr</mark> `gid`
 
 ```python
 gid: int
@@ -140,7 +140,7 @@ gid: int
 
 The numerical group id
 
-#### <mark style="color:yellow;">`attr`</mark>` members`
+#### <mark style="color:yellow;">attr</mark> `members`
 
 ```python
 members: list[str]
@@ -148,13 +148,13 @@ members: list[str]
 
 All the group member's user names
 
-## <mark style="color:red;">`class`</mark>` connector.Connector`
+## <mark style="color:red;">class</mark> `connector.Connector`
 
 The base class for all connectors.
 
 ### Attributes
 
-#### <mark style="color:yellow;">`attr`</mark>` schema`
+#### <mark style="color:yellow;">attr</mark> `schema`
 
 ```python
 schema: str
@@ -164,7 +164,7 @@ The schema of the connector. Must match the schema used in urls of this connecto
 such as `ssh` for `ssh:...`. May also appear in log messages. A schema is the part
 of the url until (but not including) the first colon. Set by the @connector decorator.
 
-#### <mark style="color:yellow;">`attr`</mark>` registered_connectors`
+#### <mark style="color:yellow;">attr</mark> `registered_connectors`
 
 ```python
 registered_connectors: dict[str, Type[Connector]] = {}
@@ -172,7 +172,7 @@ registered_connectors: dict[str, Type[Connector]] = {}
 
 The list of all registered connectors.
 
-### <mark style="color:yellow;">`def`</mark> `open()`
+### <mark style="color:yellow;">def</mark> `open()`
 
 ```python
 def open(self) -> None:
@@ -180,7 +180,7 @@ def open(self) -> None:
 
 Opens the connection to the remote host.
 
-### <mark style="color:yellow;">`def`</mark> `close()`
+### <mark style="color:yellow;">def</mark> `close()`
 
 ```python
 def close(self) -> None:
@@ -188,7 +188,7 @@ def close(self) -> None:
 
 Closes the connection to the remote host.
 
-### <mark style="color:yellow;">`def`</mark> `run()`
+### <mark style="color:yellow;">def</mark> `run()`
 
 ```python
 def run(self, command: list[str], input: Optional[bytes] = None, 
@@ -237,7 +237,7 @@ containing the returned information (if any) and the status code.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">`def`</mark> `resolve_user()`
+### <mark style="color:yellow;">def</mark> `resolve_user()`
 
 ```python
 def resolve_user(self, user: Optional[str]) -> str:
@@ -263,7 +263,7 @@ returns the user as which the remote command is running.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">`def`</mark> `resolve_group()`
+### <mark style="color:yellow;">def</mark> `resolve_group()`
 
 ```python
 def resolve_group(self, group: Optional[str]) -> str:
@@ -289,7 +289,7 @@ returns the group as which the remote command is running.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">`def`</mark> `stat()`
+### <mark style="color:yellow;">def</mark> `stat()`
 
 ```python
 def stat(self, path: str, follow_links: bool = False, 
@@ -319,7 +319,7 @@ Returns None if the remote path doesn't exist.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">`def`</mark> `upload()`
+### <mark style="color:yellow;">def</mark> `upload()`
 
 ```python
 def upload(self, file: str, content: bytes, mode: Optional[str] = None, 
@@ -350,7 +350,7 @@ Uploads the given content to the remote system and saves it under the given file
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">`def`</mark> `download()`
+### <mark style="color:yellow;">def</mark> `download()`
 
 ```python
 def download(self, file: str) -> bytes:
@@ -370,7 +370,7 @@ Downloads the given file from the remote system.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">`def`</mark> `query_user()`
+### <mark style="color:yellow;">def</mark> `query_user()`
 
 ```python
 def query_user(self, user: str, query_password_hash: bool = False
@@ -397,7 +397,7 @@ Queries information about a user on the reomte system.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">`def`</mark> `query_group()`
+### <mark style="color:yellow;">def</mark> `query_group()`
 
 ```python
 def query_group(self, group: str) -> GroupEntry:
@@ -421,7 +421,7 @@ Queries information about a group on the reomte system.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">`def`</mark> `getenv()`
+### <mark style="color:yellow;">def</mark> `getenv()`
 
 ```python
 def getenv(self, key: str) -> Optional[str]:
@@ -445,7 +445,7 @@ Return's an environment variable from the remote host.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">`def`</mark> `extract_hostname()`
+### <mark style="color:yellow;">def</mark> `extract_hostname()`
 
 ```python
 def extract_hostname(cls, url: str) -> str:
@@ -465,7 +465,7 @@ Extracts the hostname from a given url where the schema matches this connector.
 
  -  **ValueError**: The provided url was invalid.
 
-## <mark style="color:yellow;">`def`</mark> `connector.connector()`
+## <mark style="color:yellow;">def</mark> `connector.connector()`
 
 ```python
 def connector.connector(schema: str

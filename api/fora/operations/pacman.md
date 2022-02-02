@@ -2,7 +2,7 @@
 
 Provides operations related to the pacman package manager.
 
-## <mark style="color:yellow;">`def`</mark> `pacman.package()`
+## <mark style="color:yellow;">def</mark> `pacman.package()`
 
 ```python
 def pacman.package(packages: list[str], present: bool = True, 

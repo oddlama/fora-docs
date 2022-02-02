@@ -4,7 +4,7 @@ Provides the dynamic module loading utilities.
 
 ## Attributes
 
-### <mark style="color:yellow;">`attr`</mark>` loader.script_stack`
+### <mark style="color:yellow;">attr</mark> `loader.script_stack`
 
 ```python
 loader.script_stack: list[tuple[ScriptWrapper, inspect.FrameInfo]] = []
@@ -12,11 +12,11 @@ loader.script_stack: list[tuple[ScriptWrapper, inspect.FrameInfo]] = []
 
 A stack of all currently executed scripts ((name, file), frame).
 
-## <mark style="color:red;">`class`</mark>` loader.ImmediateInventory`
+## <mark style="color:red;">class</mark> `loader.ImmediateInventory`
 
 A temporary inventory just for a single run, without the ability to load host or group module files.
 
-### <mark style="color:yellow;">`def`</mark> `base_dir()`
+### <mark style="color:yellow;">def</mark> `base_dir()`
 
 ```python
 def base_dir(self) -> str:
@@ -24,7 +24,7 @@ def base_dir(self) -> str:
 
 An immediate inventory has no base directory.
 
-### <mark style="color:yellow;">`def`</mark> `group_module_file()`
+### <mark style="color:yellow;">def</mark> `group_module_file()`
 
 ```python
 def group_module_file(self, name: str) -> Optional[str]:
@@ -32,7 +32,7 @@ def group_module_file(self, name: str) -> Optional[str]:
 
 An immediate inventory has no group modules.
 
-### <mark style="color:yellow;">`def`</mark> `host_module_file()`
+### <mark style="color:yellow;">def</mark> `host_module_file()`
 
 ```python
 def host_module_file(self, name: str) -> Optional[str]:
@@ -40,7 +40,7 @@ def host_module_file(self, name: str) -> Optional[str]:
 
 An immediate inventory has no host modules.
 
-### <mark style="color:yellow;">`def`</mark> `available_groups()`
+### <mark style="color:yellow;">def</mark> `available_groups()`
 
 ```python
 def available_groups(self) -> set[str]:
@@ -48,7 +48,7 @@ def available_groups(self) -> set[str]:
 
 An immediate inventory has no groups.
 
-## <mark style="color:yellow;">`def`</mark> `loader.load_inventory()`
+## <mark style="color:yellow;">def</mark> `loader.load_inventory()`
 
 ```python
 def loader.load_inventory(inventory_file_or_host_url: str) -> None:
@@ -66,7 +66,7 @@ and validates the definintions.
 
  -  **FatalError**: The loaded inventory was invalid.
 
-## <mark style="color:yellow;">`def`</mark> `loader.run_script()`
+## <mark style="color:yellow;">def</mark> `loader.run_script()`
 
 ```python
 def loader.run_script(script: str, frame: inspect.FrameInfo, 

@@ -3,14 +3,14 @@
 Provides a class to manage a remote connection via the host's connector.
 Stores state along with the connection.
 
-## <mark style="color:red;">`class`</mark>` connection.Connection`
+## <mark style="color:red;">class</mark> `connection.Connection`
 
 The connection class represents a connection to a host.
 It consists of a connector, which is actually responsible for
 providing remote access, and some state, which determines defaults
 for the commands executed on the remote system.
 
-### <mark style="color:yellow;">`def`</mark> `resolve_defaults()`
+### <mark style="color:yellow;">def</mark> `resolve_defaults()`
 
 ```python
 def resolve_defaults(self, settings: RemoteSettings) -> RemoteSettings:
@@ -28,7 +28,7 @@ means that this method will fail if e.g. the cwd doesn't exist on the remote.
 
  -  **RemoteSettings**: The resolved settings
 
-### <mark style="color:yellow;">`def`</mark> `run()`
+### <mark style="color:yellow;">def</mark> `run()`
 
 ```python
 def run(self, command: list[str], input: Optional[bytes] = None, 
@@ -40,7 +40,7 @@ def run(self, command: list[str], input: Optional[bytes] = None,
 
 See [`Connector.run()`](api/fora/connectors/connector.md#Connector.run).
 
-### <mark style="color:yellow;">`def`</mark> `resolve_user()`
+### <mark style="color:yellow;">def</mark> `resolve_user()`
 
 ```python
 def resolve_user(self, user: Optional[str]) -> str:
@@ -48,7 +48,7 @@ def resolve_user(self, user: Optional[str]) -> str:
 
 See [`Connector.resolve_user()`](api/fora/connectors/connector.md#Connector.resolve_user).
 
-### <mark style="color:yellow;">`def`</mark> `resolve_group()`
+### <mark style="color:yellow;">def</mark> `resolve_group()`
 
 ```python
 def resolve_group(self, group: Optional[str]) -> str:
@@ -56,7 +56,7 @@ def resolve_group(self, group: Optional[str]) -> str:
 
 See [`Connector.resolve_group()`](api/fora/connectors/connector.md#Connector.resolve_group).
 
-### <mark style="color:yellow;">`def`</mark> `stat()`
+### <mark style="color:yellow;">def</mark> `stat()`
 
 ```python
 def stat(self, path: str, follow_links: bool = False, 
@@ -65,7 +65,7 @@ def stat(self, path: str, follow_links: bool = False,
 
 See [`Connector.stat()`](api/fora/connectors/connector.md#Connector.stat).
 
-### <mark style="color:yellow;">`def`</mark> `upload()`
+### <mark style="color:yellow;">def</mark> `upload()`
 
 ```python
 def upload(self, file: str, content: bytes, mode: Optional[str] = None, 
@@ -75,7 +75,7 @@ def upload(self, file: str, content: bytes, mode: Optional[str] = None,
 
 See [`Connector.upload()`](api/fora/connectors/connector.md#Connector.upload).
 
-### <mark style="color:yellow;">`def`</mark> `download()`
+### <mark style="color:yellow;">def</mark> `download()`
 
 ```python
 def download(self, file: str) -> bytes:
@@ -83,7 +83,7 @@ def download(self, file: str) -> bytes:
 
 See [`Connector.download()`](api/fora/connectors/connector.md#Connector.download).
 
-### <mark style="color:yellow;">`def`</mark> `download_or()`
+### <mark style="color:yellow;">def</mark> `download_or()`
 
 ```python
 def download_or(self, file: str, default: Optional[bytes] = None
@@ -108,7 +108,7 @@ Same as [`Connection.download()`](api/fora/connection.md#Connection.download), b
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">`def`</mark> `query_user()`
+### <mark style="color:yellow;">def</mark> `query_user()`
 
 ```python
 def query_user(self, user: str, query_password_hash: bool = False, 
@@ -117,7 +117,7 @@ def query_user(self, user: str, query_password_hash: bool = False,
 
 See [`Connector.query_user()`](api/fora/connectors/connector.md#Connector.query_user), but returns the given default in case the user doesn't exist.
 
-### <mark style="color:yellow;">`def`</mark> `query_group()`
+### <mark style="color:yellow;">def</mark> `query_group()`
 
 ```python
 def query_group(self, group: str, default: Optional[GroupEntry] = None
@@ -126,7 +126,7 @@ def query_group(self, group: str, default: Optional[GroupEntry] = None
 
 See [`Connector.query_group()`](api/fora/connectors/connector.md#Connector.query_group), but returns the given default in case the group doesn't exist.
 
-### <mark style="color:yellow;">`def`</mark> `home_dir()`
+### <mark style="color:yellow;">def</mark> `home_dir()`
 
 ```python
 def home_dir(self, user: Optional[str] = None) -> str:
@@ -151,7 +151,7 @@ it defaults to the current user.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">`def`</mark> `getenv()`
+### <mark style="color:yellow;">def</mark> `getenv()`
 
 ```python
 def getenv(self, key: str, default: Optional[str] = None) -> Optional[str]:
@@ -159,7 +159,7 @@ def getenv(self, key: str, default: Optional[str] = None) -> Optional[str]:
 
 See [`Connector.getenv()`](api/fora/connectors/connector.md#Connector.getenv), but returns the given default in case the key doesn't exist.
 
-## <mark style="color:yellow;">`def`</mark> `connection.open_connection()`
+## <mark style="color:yellow;">def</mark> `connection.open_connection()`
 
 ```python
 def connection.open_connection(host: HostWrapper) -> Connection:
