@@ -92,7 +92,7 @@ def Connection.download_or(self, file: str, default: Optional[bytes] = None
                            ) -> Optional[bytes]:
 ```
 
-Same as [`Connection.download()`](#def-Connection.download), but returns the given default in case the file doesn't exist.
+Same as [`Connection.download()`](connection.md#def-Connection.download), but returns the given default in case the file doesn't exist.
 
 #### Parameters
 

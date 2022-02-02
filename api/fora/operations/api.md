@@ -116,7 +116,7 @@ def Operation.defaults(self, *args: Any, **kwargs: Any
                        ) -> RemoteDefaultsContext:
 ```
 
-Sets defaults on the current script. See [`ScriptWrapper.defaults()`](types.md#def-ScriptWrapper.defaults).
+Sets defaults on the current script. See [`ScriptWrapper.defaults()`](../types.md#def-ScriptWrapper.defaults).
 
 ### <mark style="color:yellow;">def</mark> `Operation.initial_state()`
 

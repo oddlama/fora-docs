@@ -204,7 +204,7 @@ variants such as `\x00`, `^@` or similar represenations.
 
 Your diffing function should still be able to work on the raw bytes
 representation, after you aquire the diff and before you apply colors,
-your output should be made printable with a function such as [`logger.decode_escape()`](#def-logger.decode\_escape):
+your output should be made printable with a function such as [`logger.decode_escape()`](logger.md#def-logger.decode\_escape):
 
 ```python
 # First decode and escape
