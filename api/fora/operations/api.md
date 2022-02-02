@@ -66,10 +66,10 @@ internal_use_only: 'Operation' = cast('Operation', None)
 
 operation's op variable is defaulted to this value to indicate that it must not be given by the user.
 
-### <mark style="color:yellow;">def</mark> `nested()`
+### <mark style="color:yellow;">def</mark> `Operation.nested()`
 
 ```python
-def nested(self, has_nested: bool) -> None:
+def Operation.nested(self, has_nested: bool) -> None:
 ```
 
 Sets whet this operation spawns nested operations. In this case,
@@ -80,10 +80,11 @@ handled differently.
 
  -  **has_nested**: Whether the operation has nested operations.
 
-### <mark style="color:yellow;">def</mark> `add_nested_result()`
+### <mark style="color:yellow;">def</mark> `Operation.add_nested_result()`
 
 ```python
-def add_nested_result(self, key: str, result: OperationResult) -> None:
+def Operation.add_nested_result(self, key: str, result: OperationResult
+                                ) -> None:
 ```
 
 Adds initial and final state of a nested operation under the given key
@@ -95,10 +96,10 @@ into this operation's state dictionaries.
 
  -  **result**: The result to add.
 
-### <mark style="color:yellow;">def</mark> `desc()`
+### <mark style="color:yellow;">def</mark> `Operation.desc()`
 
 ```python
-def desc(self, description: str) -> None:
+def Operation.desc(self, description: str) -> None:
 ```
 
 Sets the description of the operation, and prints an
@@ -108,34 +109,35 @@ early status via the logger.
 
  -  **description**: The new description.
 
-### <mark style="color:yellow;">def</mark> `defaults()`
+### <mark style="color:yellow;">def</mark> `Operation.defaults()`
 
 ```python
-def defaults(self, *args: Any, **kwargs: Any) -> RemoteDefaultsContext:
+def Operation.defaults(self, *args: Any, **kwargs: Any
+                       ) -> RemoteDefaultsContext:
 ```
 
-Sets defaults on the current script. See [`ScriptWrapper.defaults()`](api/fora/types.md#ScriptWrapper.defaults).
+Sets defaults on the current script. See [`ScriptWrapper.defaults()`](api/fora/types.md#def-ScriptWrapper.defaults).
 
-### <mark style="color:yellow;">def</mark> `initial_state()`
+### <mark style="color:yellow;">def</mark> `Operation.initial_state()`
 
 ```python
-def initial_state(self, **kwargs: Any) -> None:
+def Operation.initial_state(self, **kwargs: Any) -> None:
 ```
 
 Sets the initial state.
 
-### <mark style="color:yellow;">def</mark> `final_state()`
+### <mark style="color:yellow;">def</mark> `Operation.final_state()`
 
 ```python
-def final_state(self, **kwargs: Any) -> None:
+def Operation.final_state(self, **kwargs: Any) -> None:
 ```
 
 Sets the final state.
 
-### <mark style="color:yellow;">def</mark> `unchanged()`
+### <mark style="color:yellow;">def</mark> `Operation.unchanged()`
 
 ```python
-def unchanged(self, ignore_none: bool = False) -> bool:
+def Operation.unchanged(self, ignore_none: bool = False) -> bool:
 ```
 
 Checks whether the initial and final states differ.
@@ -148,10 +150,10 @@ Checks whether the initial and final states differ.
 
  -  **bool**: Whether the states differ.
 
-### <mark style="color:yellow;">def</mark> `changed()`
+### <mark style="color:yellow;">def</mark> `Operation.changed()`
 
 ```python
-def changed(self, key: str) -> bool:
+def Operation.changed(self, key: str) -> bool:
 ```
 
 Checks whether a specific key will change.
@@ -164,11 +166,11 @@ Checks whether a specific key will change.
 
  -  **bool**: Whether the states differ.
 
-### <mark style="color:yellow;">def</mark> `diff()`
+### <mark style="color:yellow;">def</mark> `Operation.diff()`
 
 ```python
-def diff(self, file: str, old: Optional[bytes], new: Optional[bytes]
-         ) -> None:
+def Operation.diff(self, file: str, old: Optional[bytes], 
+                   new: Optional[bytes]) -> None:
 ```
 
 Adds a file to the diffing output.
@@ -181,10 +183,10 @@ Adds a file to the diffing output.
 
  -  **new**: The new content or None if the file was deleted.
 
-### <mark style="color:yellow;">def</mark> `failure()`
+### <mark style="color:yellow;">def</mark> `Operation.failure()`
 
 ```python
-def failure(self, msg: str) -> OperationResult:
+def Operation.failure(self, msg: str) -> OperationResult:
 ```
 
 Returns a failed operation result.
@@ -193,10 +195,10 @@ Returns a failed operation result.
 
  -  **OperationResult**: The OperationResult for this failed operation.
 
-### <mark style="color:yellow;">def</mark> `success()`
+### <mark style="color:yellow;">def</mark> `Operation.success()`
 
 ```python
-def success(self) -> OperationResult:
+def Operation.success(self) -> OperationResult:
 ```
 
 Returns a successful operation result.

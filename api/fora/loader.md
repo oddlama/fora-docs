@@ -16,34 +16,34 @@ A stack of all currently executed scripts ((name, file), frame).
 
 A temporary inventory just for a single run, without the ability to load host or group module files.
 
-### <mark style="color:yellow;">def</mark> `base_dir()`
+### <mark style="color:yellow;">def</mark> `ImmediateInventory.base_dir()`
 
 ```python
-def base_dir(self) -> str:
+def ImmediateInventory.base_dir(self) -> str:
 ```
 
 An immediate inventory has no base directory.
 
-### <mark style="color:yellow;">def</mark> `group_module_file()`
+### <mark style="color:yellow;">def</mark> `ImmediateInventory.group_module_file()`
 
 ```python
-def group_module_file(self, name: str) -> Optional[str]:
+def ImmediateInventory.group_module_file(self, name: str) -> Optional[str]:
 ```
 
 An immediate inventory has no group modules.
 
-### <mark style="color:yellow;">def</mark> `host_module_file()`
+### <mark style="color:yellow;">def</mark> `ImmediateInventory.host_module_file()`
 
 ```python
-def host_module_file(self, name: str) -> Optional[str]:
+def ImmediateInventory.host_module_file(self, name: str) -> Optional[str]:
 ```
 
 An immediate inventory has no host modules.
 
-### <mark style="color:yellow;">def</mark> `available_groups()`
+### <mark style="color:yellow;">def</mark> `ImmediateInventory.available_groups()`
 
 ```python
-def available_groups(self) -> set[str]:
+def ImmediateInventory.available_groups(self) -> set[str]:
 ```
 
 An immediate inventory has no groups.

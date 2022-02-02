@@ -172,30 +172,30 @@ registered_connectors: dict[str, Type[Connector]] = {}
 
 The list of all registered connectors.
 
-### <mark style="color:yellow;">def</mark> `open()`
+### <mark style="color:yellow;">def</mark> `Connector.open()`
 
 ```python
-def open(self) -> None:
+def Connector.open(self) -> None:
 ```
 
 Opens the connection to the remote host.
 
-### <mark style="color:yellow;">def</mark> `close()`
+### <mark style="color:yellow;">def</mark> `Connector.close()`
 
 ```python
-def close(self) -> None:
+def Connector.close(self) -> None:
 ```
 
 Closes the connection to the remote host.
 
-### <mark style="color:yellow;">def</mark> `run()`
+### <mark style="color:yellow;">def</mark> `Connector.run()`
 
 ```python
-def run(self, command: list[str], input: Optional[bytes] = None, 
-        capture_output: bool = True, check: bool = True, 
-        user: Optional[str] = None, group: Optional[str] = None, 
-        umask: Optional[str] = None, cwd: Optional[str] = None
-        ) -> CompletedRemoteCommand:
+def Connector.run(self, command: list[str], input: Optional[bytes] = None, 
+                  capture_output: bool = True, check: bool = True, 
+                  user: Optional[str] = None, group: Optional[str] = None, 
+                  umask: Optional[str] = None, cwd: Optional[str] = None
+                  ) -> CompletedRemoteCommand:
 ```
 
 Runs the given command on the remote, returning a CompletedRemoteCommand
@@ -237,10 +237,10 @@ containing the returned information (if any) and the status code.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">def</mark> `resolve_user()`
+### <mark style="color:yellow;">def</mark> `Connector.resolve_user()`
 
 ```python
-def resolve_user(self, user: Optional[str]) -> str:
+def Connector.resolve_user(self, user: Optional[str]) -> str:
 ```
 
 Resolves the given user on the remote, returning
@@ -263,10 +263,10 @@ returns the user as which the remote command is running.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">def</mark> `resolve_group()`
+### <mark style="color:yellow;">def</mark> `Connector.resolve_group()`
 
 ```python
-def resolve_group(self, group: Optional[str]) -> str:
+def Connector.resolve_group(self, group: Optional[str]) -> str:
 ```
 
 Resolves the given group on the remote, returning
@@ -289,11 +289,11 @@ returns the group as which the remote command is running.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">def</mark> `stat()`
+### <mark style="color:yellow;">def</mark> `Connector.stat()`
 
 ```python
-def stat(self, path: str, follow_links: bool = False, 
-         sha512sum: bool = False) -> Optional[StatResult]:
+def Connector.stat(self, path: str, follow_links: bool = False, 
+                   sha512sum: bool = False) -> Optional[StatResult]:
 ```
 
 Runs stat() on the given path on the remote. Follows links if follow_links
@@ -319,12 +319,13 @@ Returns None if the remote path doesn't exist.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">def</mark> `upload()`
+### <mark style="color:yellow;">def</mark> `Connector.upload()`
 
 ```python
-def upload(self, file: str, content: bytes, mode: Optional[str] = None, 
-           owner: Optional[str] = None, group: Optional[str] = None
-           ) -> None:
+def Connector.upload(self, file: str, content: bytes, 
+                     mode: Optional[str] = None, 
+                     owner: Optional[str] = None, 
+                     group: Optional[str] = None) -> None:
 ```
 
 Uploads the given content to the remote system and saves it under the given file path. Overwrites existing files.
@@ -350,10 +351,10 @@ Uploads the given content to the remote system and saves it under the given file
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">def</mark> `download()`
+### <mark style="color:yellow;">def</mark> `Connector.download()`
 
 ```python
-def download(self, file: str) -> bytes:
+def Connector.download(self, file: str) -> bytes:
 ```
 
 Downloads the given file from the remote system.
@@ -370,11 +371,11 @@ Downloads the given file from the remote system.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">def</mark> `query_user()`
+### <mark style="color:yellow;">def</mark> `Connector.query_user()`
 
 ```python
-def query_user(self, user: str, query_password_hash: bool = False
-               ) -> UserEntry:
+def Connector.query_user(self, user: str, query_password_hash: bool = False
+                         ) -> UserEntry:
 ```
 
 Queries information about a user on the reomte system.
@@ -397,10 +398,10 @@ Queries information about a user on the reomte system.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">def</mark> `query_group()`
+### <mark style="color:yellow;">def</mark> `Connector.query_group()`
 
 ```python
-def query_group(self, group: str) -> GroupEntry:
+def Connector.query_group(self, group: str) -> GroupEntry:
 ```
 
 Queries information about a group on the reomte system.
@@ -421,10 +422,10 @@ Queries information about a group on the reomte system.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">def</mark> `getenv()`
+### <mark style="color:yellow;">def</mark> `Connector.getenv()`
 
 ```python
-def getenv(self, key: str) -> Optional[str]:
+def Connector.getenv(self, key: str) -> Optional[str]:
 ```
 
 Return's an environment variable from the remote host.
@@ -445,10 +446,10 @@ Return's an environment variable from the remote host.
 
  -  **IOError**: An error occurred with the connection.
 
-### <mark style="color:yellow;">def</mark> `extract_hostname()`
+### <mark style="color:yellow;">def</mark> `Connector.extract_hostname()`
 
 ```python
-def extract_hostname(cls, url: str) -> str:
+def Connector.extract_hostname(cls, url: str) -> str:
 ```
 
 Extracts the hostname from a given url where the schema matches this connector.

@@ -6,10 +6,10 @@ Contains a connector which handles connections to hosts via SSH.
 
 A tunnel connector that provides remote access to the current local machine via a subprocess.
 
-### <mark style="color:yellow;">def</mark> `command()`
+### <mark style="color:yellow;">def</mark> `LocalConnector.command()`
 
 ```python
-def command(self) -> list[str]:
+def LocalConnector.command(self) -> list[str]:
 ```
 
 Constructs the full command needed to execute a tunnel dispatcher on this machine.
@@ -18,8 +18,8 @@ Constructs the full command needed to execute a tunnel dispatcher on this machin
 
  -  **list[str]**: The required ssh command.
 
-### <mark style="color:yellow;">def</mark> `extract_hostname()`
+### <mark style="color:yellow;">def</mark> `LocalConnector.extract_hostname()`
 
 ```python
-def extract_hostname(cls, url: str) -> str:
+def LocalConnector.extract_hostname(cls, url: str) -> str:
 ```

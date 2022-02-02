@@ -179,18 +179,18 @@ loaded_hosts: dict[str, HostWrapper] = field(default_factory=dict)
 
 All loaded hosts. Set when the inventory is processed.
 
-### <mark style="color:yellow;">def</mark> `is_initialized()`
+### <mark style="color:yellow;">def</mark> `InventoryWrapper.is_initialized()`
 
 ```python
-def is_initialized(self) -> bool:
+def InventoryWrapper.is_initialized(self) -> bool:
 ```
 
 Returns True if the inventory is fully initialized.
 
-### <mark style="color:yellow;">def</mark> `available_groups()`
+### <mark style="color:yellow;">def</mark> `InventoryWrapper.available_groups()`
 
 ```python
-def available_groups(self) -> set[str]:
+def InventoryWrapper.available_groups(self) -> set[str]:
 ```
 
 Returns the set of available groups in this inventory.
@@ -209,10 +209,10 @@ corresponding module file.
 
  -  **RuntimeError**: The inventory has no associated module file.
 
-### <mark style="color:yellow;">def</mark> `base_dir()`
+### <mark style="color:yellow;">def</mark> `InventoryWrapper.base_dir()`
 
 ```python
-def base_dir(self) -> str:
+def InventoryWrapper.base_dir(self) -> str:
 ```
 
 Returns absolute path of this inventory's base directory, which
@@ -226,10 +226,10 @@ is usually its containing folder.
 
  -  **RuntimeError**: The inventory has no associated module file.
 
-### <mark style="color:yellow;">def</mark> `base_remote_settings()`
+### <mark style="color:yellow;">def</mark> `InventoryWrapper.base_remote_settings()`
 
 ```python
-def base_remote_settings(self) -> RemoteSettings:
+def InventoryWrapper.base_remote_settings(self) -> RemoteSettings:
 ```
 
 Returns the base remote settings that will be used when connections to hosts
@@ -241,10 +241,10 @@ to match the privileges the remote dispatcher is running under.
 
  -  **RemoteSettings**: The base remote settings.
 
-### <mark style="color:yellow;">def</mark> `group_module_file()`
+### <mark style="color:yellow;">def</mark> `InventoryWrapper.group_module_file()`
 
 ```python
-def group_module_file(self, name: str) -> Optional[str]:
+def InventoryWrapper.group_module_file(self, name: str) -> Optional[str]:
 ```
 
 Returns the absolute group module file path given the group's name.
@@ -258,10 +258,10 @@ Returning None associates no group module file to the group by default.
 
  -  **Optional[str]**: The group module file path.
 
-### <mark style="color:yellow;">def</mark> `host_module_file()`
+### <mark style="color:yellow;">def</mark> `InventoryWrapper.host_module_file()`
 
 ```python
-def host_module_file(self, name: str) -> Optional[str]:
+def InventoryWrapper.host_module_file(self, name: str) -> Optional[str]:
 ```
 
 Returns the absolute host module file path given the host's name.
@@ -275,10 +275,10 @@ Returning None associates no host module file to the host by default.
 
  -  **Optional[str]**: The host module file path.
 
-### <mark style="color:yellow;">def</mark> `qualify_url()`
+### <mark style="color:yellow;">def</mark> `InventoryWrapper.qualify_url()`
 
 ```python
-def qualify_url(self, url: str) -> str:
+def InventoryWrapper.qualify_url(self, url: str) -> str:
 ```
 
 Returns a valid url for any given url from the hosts array if possible.
@@ -298,10 +298,10 @@ for any url that has no explicit schema.
 
  -  **ValueError**: The provided url was invalid.
 
-### <mark style="color:yellow;">def</mark> `extract_hostname()`
+### <mark style="color:yellow;">def</mark> `InventoryWrapper.extract_hostname()`
 
 ```python
-def extract_hostname(self, url: str) -> str:
+def InventoryWrapper.extract_hostname(self, url: str) -> str:
 ```
 
 Extracts the hostname from a given url. By default
@@ -319,10 +319,10 @@ this is done via the the responsible connector.
 
  -  **ValueError**: The provided url was invalid.
 
-### <mark style="color:yellow;">def</mark> `load()`
+### <mark style="color:yellow;">def</mark> `InventoryWrapper.load()`
 
 ```python
-def load(self) -> None:
+def InventoryWrapper.load(self) -> None:
 ```
 
 This function preprocesses the declared hosts and groups, calculates
@@ -335,11 +335,12 @@ dynamic definitions are fully loaded.
 
  -  **ValueError**: An invalid supplied value caused an error while processing.
 
-### <mark style="color:yellow;">def</mark> `load_group()`
+### <mark style="color:yellow;">def</mark> `InventoryWrapper.load_group()`
 
 ```python
-def load_group(self, name: str, initializer: Optional[GroupWrapper]
-               ) -> GroupWrapper:
+def InventoryWrapper.load_group(self, name: str, 
+                                initializer: Optional[GroupWrapper]
+                                ) -> GroupWrapper:
 ```
 
 Creates a new instance of the given group.
@@ -355,11 +356,12 @@ Creates a new instance of the given group.
 
  -  **GroupWrapper**: A new instance of the declared group.
 
-### <mark style="color:yellow;">def</mark> `load_host()`
+### <mark style="color:yellow;">def</mark> `InventoryWrapper.load_host()`
 
 ```python
-def load_host(self, name: str, initializer: Optional[GroupWrapper]
-              ) -> HostWrapper:
+def InventoryWrapper.load_host(self, name: str, 
+                               initializer: Optional[GroupWrapper]
+                               ) -> HostWrapper:
 ```
 
 Creates a new instance of the given host.
@@ -375,10 +377,10 @@ Creates a new instance of the given host.
 
  -  **HostWrapper**: A new instance of the declared host.
 
-### <mark style="color:yellow;">def</mark> `instanciate_host()`
+### <mark style="color:yellow;">def</mark> `InventoryWrapper.instanciate_host()`
 
 ```python
-def instanciate_host(self, host: str) -> HostWrapper:
+def InventoryWrapper.instanciate_host(self, host: str) -> HostWrapper:
 ```
 
 This function instanciates the given host by recursively loading all groups

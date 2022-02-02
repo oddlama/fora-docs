@@ -11,10 +11,10 @@ Error class for argument parsing errors.
 
 An argument parser that throws when invalid argument types are passed.
 
-### <mark style="color:yellow;">def</mark> `error()`
+### <mark style="color:yellow;">def</mark> `ThrowingArgumentParser.error()`
 
 ```python
-def error(self, message: str) -> NoReturn:
+def ThrowingArgumentParser.error(self, message: str) -> NoReturn:
 ```
 
 Raises an exception on error.

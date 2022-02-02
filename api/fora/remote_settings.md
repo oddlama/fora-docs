@@ -14,10 +14,11 @@ This class stores certain values that determine how things are executed on
 the remote host. This includes things such as the owner and group of newly
 created files, or the user as which commands are run.
 
-### <mark style="color:yellow;">def</mark> `overlay()`
+### <mark style="color:yellow;">def</mark> `RemoteSettings.overlay()`
 
 ```python
-def overlay(self, settings: RemoteSettings) -> RemoteSettings:
+def RemoteSettings.overlay(self, settings: RemoteSettings
+                           ) -> RemoteSettings:
 ```
 
 Overlays settings on top of this. Values will only be overwritten

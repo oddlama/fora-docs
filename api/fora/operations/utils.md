@@ -40,7 +40,7 @@ def utils.package_manager(command: str) -> Callable[[Callable], Callable]:
 Operation function decorator to denote that this operation constitutes the package() operation of a package manager.
 This will cause it to be registered such that system.package() can call this package function if the given command is detected on the remote system.
 
-See [`pacman.package()`](api/fora/operations/pacman.md#package) for an example usage.
+See [`pacman.package()`](api/fora/operations/pacman.md#def-pacman.package) for an example usage.
 
 ## <mark style="color:yellow;">def</mark> `utils.service_manager()`
 
@@ -51,7 +51,7 @@ def utils.service_manager(command: str) -> Callable[[Callable], Callable]:
 Operation function decorator to denote that this operation constitutes the service() operation of a service manager.
 This will cause it to be registered such that system.service() can call this service function if the given command is detected on the remote system.
 
-See [`systemd.service()`](api/fora/operations/systemd.md#service) for an example usage.
+See [`systemd.service()`](api/fora/operations/systemd.md#def-systemd.service) for an example usage.
 
 ## <mark style="color:yellow;">def</mark> `utils.generic_package()`
 

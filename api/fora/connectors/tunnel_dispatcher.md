@@ -12,34 +12,34 @@ An exception type for remote OSErrors.
 
 Represents a connection to this dispatcher via an input and output buffer.
 
-### <mark style="color:yellow;">def</mark> `flush()`
+### <mark style="color:yellow;">def</mark> `Connection.flush()`
 
 ```python
-def flush(self) -> None:
+def Connection.flush(self) -> None:
 ```
 
 Flushes the output buffer.
 
-### <mark style="color:yellow;">def</mark> `read()`
+### <mark style="color:yellow;">def</mark> `Connection.read()`
 
 ```python
-def read(self, count: int) -> bytes:
+def Connection.read(self, count: int) -> bytes:
 ```
 
 Reads exactly the given amount of bytes.
 
-### <mark style="color:yellow;">def</mark> `write()`
+### <mark style="color:yellow;">def</mark> `Connection.write()`
 
 ```python
-def write(self, data: bytes, count: int) -> None:
+def Connection.write(self, data: bytes, count: int) -> None:
 ```
 
 Writes exactly the given amount of bytes from data.
 
-### <mark style="color:yellow;">def</mark> `write_packet()`
+### <mark style="color:yellow;">def</mark> `Connection.write_packet()`
 
 ```python
-def write_packet(self, packet: Any) -> None:
+def Connection.write_packet(self, packet: Any) -> None:
 ```
 
 Writes the given packet.
@@ -57,10 +57,10 @@ This packet is used to acknowledge a previous PacketCheckAlive packet.
 This packet is used to check whether a connection is alive.
 The receiver must answer with PacketAck immediately.
 
-### <mark style="color:yellow;">def</mark> `handle()`
+### <mark style="color:yellow;">def</mark> `PacketCheckAlive.handle()`
 
 ```python
-def handle(self, conn: Connection) -> None:
+def PacketCheckAlive.handle(self, conn: Connection) -> None:
 ```
 
 Responds with PacketAck.
@@ -69,10 +69,10 @@ Responds with PacketAck.
 
 This packet is used to signal the server to close the connection and end the dispatcher.
 
-### <mark style="color:yellow;">def</mark> `handle()`
+### <mark style="color:yellow;">def</mark> `PacketExit.handle()`
 
 ```python
-def handle(self, conn: Connection) -> None:
+def PacketExit.handle(self, conn: Connection) -> None:
 ```
 
 Signals the connection to close.
@@ -97,10 +97,10 @@ This packet is used to indicate an error when running a process or when running 
 
 This packet is used to run a process.
 
-### <mark style="color:yellow;">def</mark> `handle()`
+### <mark style="color:yellow;">def</mark> `PacketProcessRun.handle()`
 
 ```python
-def handle(self, conn: Connection) -> None:
+def PacketProcessRun.handle(self, conn: Connection) -> None:
 ```
 
 Runs the requested command.
@@ -113,10 +113,10 @@ This packet is used to return the results of a stat packet.
 
 This packet is used to retrieve information about a file or directory.
 
-### <mark style="color:yellow;">def</mark> `handle()`
+### <mark style="color:yellow;">def</mark> `PacketStat.handle()`
 
 ```python
-def handle(self, conn: Connection) -> None:
+def PacketStat.handle(self, conn: Connection) -> None:
 ```
 
 Stats the requested path.
@@ -130,10 +130,10 @@ This packet is used to return the results of a resolve packet.
 This packet is used to canonicalize a user name / uid and to ensure it exists.
 If None is given, it queries the current user.
 
-### <mark style="color:yellow;">def</mark> `handle()`
+### <mark style="color:yellow;">def</mark> `PacketResolveUser.handle()`
 
 ```python
-def handle(self, conn: Connection) -> None:
+def PacketResolveUser.handle(self, conn: Connection) -> None:
 ```
 
 Resolves the requested user.
@@ -143,10 +143,10 @@ Resolves the requested user.
 This packet is used to canonicalize a group name / gid and to ensure it exists.
 If None is given, it queries the current group.
 
-### <mark style="color:yellow;">def</mark> `handle()`
+### <mark style="color:yellow;">def</mark> `PacketResolveGroup.handle()`
 
 ```python
-def handle(self, conn: Connection) -> None:
+def PacketResolveGroup.handle(self, conn: Connection) -> None:
 ```
 
 Resolves the requested group.
@@ -157,10 +157,10 @@ This packet is used to upload the given content to the remote and save it as a f
 Overwrites existing files. Responds with PacketOk if saving was successful, or PacketInvalidField if any
 field contained an invalid value.
 
-### <mark style="color:yellow;">def</mark> `handle()`
+### <mark style="color:yellow;">def</mark> `PacketUpload.handle()`
 
 ```python
-def handle(self, conn: Connection) -> None:
+def PacketUpload.handle(self, conn: Connection) -> None:
 ```
 
 Saves the content under the given path.
@@ -175,10 +175,10 @@ This packet is used to download the contents of a given file.
 Responds with PacketDownloadResult if reading was successful, or PacketInvalidField if any
 field contained an invalid value.
 
-### <mark style="color:yellow;">def</mark> `handle()`
+### <mark style="color:yellow;">def</mark> `PacketDownload.handle()`
 
 ```python
-def handle(self, conn: Connection) -> None:
+def PacketDownload.handle(self, conn: Connection) -> None:
 ```
 
 Reads the file.
@@ -283,10 +283,10 @@ query_password_hash: bool
 
 Whether the current password hash from shadow should also be returned
 
-### <mark style="color:yellow;">def</mark> `handle()`
+### <mark style="color:yellow;">def</mark> `PacketQueryUser.handle()`
 
 ```python
-def handle(self, conn: Connection) -> None:
+def PacketQueryUser.handle(self, conn: Connection) -> None:
 ```
 
 Queries the requested user.
@@ -335,10 +335,10 @@ group: str
 
 Group name or decimal gid
 
-### <mark style="color:yellow;">def</mark> `handle()`
+### <mark style="color:yellow;">def</mark> `PacketQueryGroup.handle()`
 
 ```python
-def handle(self, conn: Connection) -> None:
+def PacketQueryGroup.handle(self, conn: Connection) -> None:
 ```
 
 Queries the requested group.
@@ -371,10 +371,10 @@ key: str
 
 The environment variable to retrieve
 
-### <mark style="color:yellow;">def</mark> `handle()`
+### <mark style="color:yellow;">def</mark> `PacketGetenv.handle()`
 
 ```python
-def handle(self, conn: Connection) -> None:
+def PacketGetenv.handle(self, conn: Connection) -> None:
 ```
 
 Gets the requested environment variable.

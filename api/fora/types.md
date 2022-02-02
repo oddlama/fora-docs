@@ -54,18 +54,18 @@ module: Optional[ModuleType] = None
 
 The dynamically loaded inventory module
 
-### <mark style="color:yellow;">def</mark> `is_exported_variable()`
+### <mark style="color:yellow;">def</mark> `ModuleWrapper.is_exported_variable()`
 
 ```python
-def is_exported_variable(self, attr: str, value: Any) -> bool:
+def ModuleWrapper.is_exported_variable(self, attr: str, value: Any) -> bool:
 ```
 
 Returns True if the the given variable doesn't inherently belong to this group.
 
-### <mark style="color:yellow;">def</mark> `exported_variables()`
+### <mark style="color:yellow;">def</mark> `ModuleWrapper.exported_variables()`
 
 ```python
-def exported_variables(self):
+def ModuleWrapper.exported_variables(self):
 ```
 
 Returns a list of exported variables, which are variables that don't inherently belong to this group.
@@ -74,28 +74,28 @@ Returns a list of exported variables, which are variables that don't inherently 
 
  -  **dict[str, Any]**: Global exported variables of the wrapped module
 
-### <mark style="color:yellow;">def</mark> `is_overloaded()`
+### <mark style="color:yellow;">def</mark> `ModuleWrapper.is_overloaded()`
 
 ```python
-def is_overloaded(self, attr: str) -> Optional[bool]:
+def ModuleWrapper.is_overloaded(self, attr: str) -> Optional[bool]:
 ```
 
 Returns NonoTrue if the given attribute exists as a variable on this wrapper but is overloaded by the wrapped module,
 False if the attribute exists on this wrapper but isn't overloaded and None if the attribute doesn't exist on this wrapper.
 
-### <mark style="color:yellow;">def</mark> `is_overridden()`
+### <mark style="color:yellow;">def</mark> `ModuleWrapper.is_overridden()`
 
 ```python
-def is_overridden(self, attr: str) -> bool:
+def ModuleWrapper.is_overridden(self, attr: str) -> bool:
 ```
 
 Returns True if a variable has both been overloaded and changed.
 
-### <mark style="color:yellow;">def</mark> `wrap()`
+### <mark style="color:yellow;">def</mark> `ModuleWrapper.wrap()`
 
 ```python
-def wrap(self, module: Any, copy_members: bool = False, 
-         copy_functions: bool = False) -> None:
+def ModuleWrapper.wrap(self, module: Any, copy_members: bool = False, 
+                       copy_functions: bool = False) -> None:
 ```
 
 Replaces the currently wrapped module (if any) with the given object.
@@ -113,10 +113,10 @@ Any object is supported.
     such that calling module.function(...) is forwarded to this wrapper's self.function(...).
     Excludes functions starting with an underscore (`_`) and functions of ModuleWrapper.
 
-### <mark style="color:yellow;">def</mark> `definition_file()`
+### <mark style="color:yellow;">def</mark> `ModuleWrapper.definition_file()`
 
 ```python
-def definition_file(self) -> str:
+def ModuleWrapper.definition_file(self) -> str:
 ```
 
 Returns the file from where the associated module has been loaded,
@@ -223,10 +223,10 @@ connection: Connection = cast('Connection', None)
 
 The active connection to this host, if one is opened.
 
-### <mark style="color:yellow;">def</mark> `create_connector()`
+### <mark style="color:yellow;">def</mark> `HostWrapper.create_connector()`
 
 ```python
-def create_connector(self) -> Connector:
+def HostWrapper.create_connector(self) -> Connector:
 ```
 
 Creates a connector for this host.
@@ -240,10 +240,10 @@ Creates a connector for this host.
  -  **FatalError**: The connector could not resolved because either an invalid connector was specified
     or the scheme could not be matched against existing connectors.
 
-### <mark style="color:yellow;">def</mark> `vars_hierarchical()`
+### <mark style="color:yellow;">def</mark> `HostWrapper.vars_hierarchical()`
 
 ```python
-def vars_hierarchical(self) -> dict[str, Any]:
+def HostWrapper.vars_hierarchical(self) -> dict[str, Any]:
 ```
 
 Returns `vars(self)` but adds all variables defined by the current script that
@@ -260,7 +260,7 @@ module, but will reflect some of it's properties better than ModuleType. While t
 class is mainly used to aid type-checking, its properties are transferred to the
 actual instanciated module before the module is executed.
 
-When writing a script module, you can use the API exposed in [`fora.script`](api/fora/\_\_init\_\_.md#script)
+When writing a script module, you can use the API exposed in [`fora.script`](api/fora/\_\_init\_\_.md#attr-fora.script)
 to access/change meta information about your module.
 
 ### Attributes
@@ -273,14 +273,18 @@ name: str
 
 The name of the script. Must not be changed.
 
-### <mark style="color:yellow;">def</mark> `defaults()`
+### <mark style="color:yellow;">def</mark> `ScriptWrapper.defaults()`
 
 ```python
-def defaults(self, as_user: Optional[str] = None, 
-             as_group: Optional[str] = None, owner: Optional[str] = None, 
-             group: Optional[str] = None, file_mode: Optional[str] = None, 
-             dir_mode: Optional[str] = None, umask: Optional[str] = None, 
-             cwd: Optional[str] = None) -> RemoteDefaultsContext:
+def ScriptWrapper.defaults(self, as_user: Optional[str] = None, 
+                           as_group: Optional[str] = None, 
+                           owner: Optional[str] = None, 
+                           group: Optional[str] = None, 
+                           file_mode: Optional[str] = None, 
+                           dir_mode: Optional[str] = None, 
+                           umask: Optional[str] = None, 
+                           cwd: Optional[str] = None
+                           ) -> RemoteDefaultsContext:
 ```
 
 Returns a context manager to incrementally change the remote execution defaults.
@@ -297,10 +301,10 @@ instead of having to first import the wrapper API:
     with script.defaults(owner="root", file_mode="644", dir_mode="755"):
         # ... execute some operations
 
-### <mark style="color:yellow;">def</mark> `current_defaults()`
+### <mark style="color:yellow;">def</mark> `ScriptWrapper.current_defaults()`
 
 ```python
-def current_defaults(self) -> RemoteSettings:
+def ScriptWrapper.current_defaults(self) -> RemoteSettings:
 ```
 
 Returns the fully resolved currently active defaults.
@@ -309,10 +313,10 @@ Returns the fully resolved currently active defaults.
 
  -  **RemoteSettings**: The currently active remote defaults.
 
-### <mark style="color:yellow;">def</mark> `Params()`
+### <mark style="color:yellow;">def</mark> `ScriptWrapper.Params()`
 
 ```python
-def Params(self, params_cls: Type[T]) -> Type[T]:
+def ScriptWrapper.Params(self, params_cls: Type[T]) -> Type[T]:
 ```
 
 Decorator used to declare script parameters.

@@ -245,7 +245,7 @@ def files.template_content(content: str, dest: str,
 ```
 
 Templates the given content and uploads the result to the remote host.
-See [`files.template()`](api/fora/operations/files.md#template) for more information about the available variables in the template.
+See [`files.template()`](api/fora/operations/files.md#def-files.template) for more information about the available variables in the template.
 
 ### Parameters
 
