@@ -260,7 +260,7 @@ module, but will reflect some of it's properties better than ModuleType. While t
 class is mainly used to aid type-checking, its properties are transferred to the
 actual instanciated module before the module is executed.
 
-When writing a script module, you can use the API exposed in [`fora.script`](\_\_init\_\_.md#attr-fora.script)
+When writing a script module, you can use the API exposed in [`fora.script`](fora.md#attr-fora.script)
 to access/change meta information about your module.
 
 ### Attributes

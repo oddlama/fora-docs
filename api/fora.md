@@ -4,32 +4,32 @@ The main module of fora.
 
 ## Subpackages
 
- -  [`fora.connectors`](connectors/\_\_init\_\_.md) ‒ Contains all standard conectors to register them by default.
+ -  [`fora.connectors`](fora/connectors.md) ‒ Contains all standard conectors to register them by default.
 
- -  [`fora.operations`](operations/\_\_init\_\_.md) ‒ This package contains all standard operation modules.
+ -  [`fora.operations`](fora/operations.md) ‒ This package contains all standard operation modules.
 
 ## Submodules
 
- -  [`fora.utils`](utils.md) ‒ Provides utility functions.
+ -  [`fora.utils`](fora/utils.md) ‒ Provides utility functions.
 
- -  [`fora.version`](version.md) ‒ *No description.*
+ -  [`fora.version`](fora/version.md) ‒ *No description.*
 
- -  [`fora.main`](main.md) ‒ Provides the top-level logic of fora such as
+ -  [`fora.main`](fora/main.md) ‒ Provides the top-level logic of fora such as
     the CLI interface and main script dispatching.
 
- -  [`fora.remote_settings`](remote\_settings.md) ‒ Provides a class that represents execution defaults for a remote host.
+ -  [`fora.remote_settings`](fora/remote\_settings.md) ‒ Provides a class that represents execution defaults for a remote host.
 
- -  [`fora.loader`](loader.md) ‒ Provides the dynamic module loading utilities.
+ -  [`fora.loader`](fora/loader.md) ‒ Provides the dynamic module loading utilities.
 
- -  [`fora.inventory_wrapper`](inventory\_wrapper.md) ‒ Provides the inventory wrapper for all inventory related functionality.
+ -  [`fora.inventory_wrapper`](fora/inventory\_wrapper.md) ‒ Provides the inventory wrapper for all inventory related functionality.
 
- -  [`fora.connection`](connection.md) ‒ Provides a class to manage a remote connection via the host's connector.
+ -  [`fora.connection`](fora/connection.md) ‒ Provides a class to manage a remote connection via the host's connector.
 
- -  [`fora.types`](types.md) ‒ Provides a mockup of loadable module types.
+ -  [`fora.types`](fora/types.md) ‒ Provides a mockup of loadable module types.
 
- -  [`fora.logger`](logger.md) ‒ Provides logging utilities.
+ -  [`fora.logger`](fora/logger.md) ‒ Provides logging utilities.
 
- -  [`fora.example_deploys`](example\_deploys.md) ‒ Provides example deploys, which can be used as a starting point.
+ -  [`fora.example_deploys`](fora/example\_deploys.md) ‒ Provides example deploys, which can be used as a starting point.
 
 ## Attributes
 
