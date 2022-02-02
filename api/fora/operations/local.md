@@ -2,7 +2,9 @@
 
 Provides operations that are related to the local system on which the fora scripts are executed.
 
-## <mark style="color:yellow;">def</mark> `local.script()`
+## Functions
+
+### <mark style="color:yellow;">def</mark> `local.script()`
 
 ```python
 def local.script(script: str, recursive: bool = False, 
@@ -26,7 +28,7 @@ value from a separately passed global variable).
     # Use a parameter
     print(params.username)
 
-### Parameters
+#### Parameters
 
  -  **script**: The local path to the script to execute.
 

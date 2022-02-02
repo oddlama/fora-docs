@@ -2,7 +2,9 @@
 
 Provides operations related to git.
 
-## <mark style="color:yellow;">def</mark> `git.repo()`
+## Functions
+
+### <mark style="color:yellow;">def</mark> `git.repo()`
 
 ```python
 def git.repo(url: str, path: str, branch_or_tag: Optional[str] = None, 
@@ -17,7 +19,7 @@ def git.repo(url: str, path: str, branch_or_tag: Optional[str] = None,
 
 Clones or updates a git repository and its submodules.
 
-### Parameters
+#### Parameters
 
  -  **url**: The url to the git repository.
 

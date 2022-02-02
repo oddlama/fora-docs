@@ -30,7 +30,9 @@ The current global indentation level.
 
 A context manager to modify the indentation level.
 
-## <mark style="color:yellow;">def</mark> `logger.use_color()`
+## Functions
+
+### <mark style="color:yellow;">def</mark> `logger.use_color()`
 
 ```python
 def logger.use_color() -> bool:
@@ -38,7 +40,7 @@ def logger.use_color() -> bool:
 
 Returns true if color should be used.
 
-## <mark style="color:yellow;">def</mark> `logger.col()`
+### <mark style="color:yellow;">def</mark> `logger.col()`
 
 ```python
 def logger.col(color_code: str) -> str:
@@ -46,7 +48,7 @@ def logger.col(color_code: str) -> str:
 
 Returns the given argument only if color is enabled.
 
-## <mark style="color:yellow;">def</mark> `logger.ellipsis()`
+### <mark style="color:yellow;">def</mark> `logger.ellipsis()`
 
 ```python
 def logger.ellipsis(s: str, width: int) -> str:
@@ -54,17 +56,17 @@ def logger.ellipsis(s: str, width: int) -> str:
 
 Shrinks the given string to width (including an ellipsis character).
 
-### Parameters
+#### Parameters
 
  -  **s**: The string.
 
  -  **width**: The maximum width.
 
-### Returns
+#### Returns
 
  -  **str**: A modified string with at most `width` characters.
 
-## <mark style="color:yellow;">def</mark> `logger.indent()`
+### <mark style="color:yellow;">def</mark> `logger.indent()`
 
 ```python
 def logger.indent() -> IndentationContext:
@@ -72,7 +74,7 @@ def logger.indent() -> IndentationContext:
 
 Retruns a context manager that increases the indentation level.
 
-## <mark style="color:yellow;">def</mark> `logger.indent_prefix()`
+### <mark style="color:yellow;">def</mark> `logger.indent_prefix()`
 
 ```python
 def logger.indent_prefix() -> str:
@@ -80,7 +82,7 @@ def logger.indent_prefix() -> str:
 
 Returns the indentation prefix for the current indentation level.
 
-## <mark style="color:yellow;">def</mark> `logger.debug()`
+### <mark style="color:yellow;">def</mark> `logger.debug()`
 
 ```python
 def logger.debug(msg: str) -> None:
@@ -88,7 +90,7 @@ def logger.debug(msg: str) -> None:
 
 Prints the given message only in debug mode.
 
-## <mark style="color:yellow;">def</mark> `logger.debug_args()`
+### <mark style="color:yellow;">def</mark> `logger.debug_args()`
 
 ```python
 def logger.debug_args(msg: str, args: dict[str, Any]) -> None:
@@ -96,7 +98,7 @@ def logger.debug_args(msg: str, args: dict[str, Any]) -> None:
 
 Prints all given arguments when in debug mode.
 
-## <mark style="color:yellow;">def</mark> `logger.print_indented()`
+### <mark style="color:yellow;">def</mark> `logger.print_indented()`
 
 ```python
 def logger.print_indented(msg: str, **kwargs: Any) -> None:
@@ -104,7 +106,7 @@ def logger.print_indented(msg: str, **kwargs: Any) -> None:
 
 Same as print(), but prefixes the message with the indentation prefix.
 
-## <mark style="color:yellow;">def</mark> `logger.connection_init()`
+### <mark style="color:yellow;">def</mark> `logger.connection_init()`
 
 ```python
 def logger.connection_init(connector: Any) -> None:
@@ -112,7 +114,7 @@ def logger.connection_init(connector: Any) -> None:
 
 Prints connection initialization information.
 
-## <mark style="color:yellow;">def</mark> `logger.connection_failed()`
+### <mark style="color:yellow;">def</mark> `logger.connection_failed()`
 
 ```python
 def logger.connection_failed(error_msg: str) -> None:
@@ -120,7 +122,7 @@ def logger.connection_failed(error_msg: str) -> None:
 
 Signals that an error has occurred while establishing the connection.
 
-## <mark style="color:yellow;">def</mark> `logger.connection_established()`
+### <mark style="color:yellow;">def</mark> `logger.connection_established()`
 
 ```python
 def logger.connection_established() -> None:
@@ -128,7 +130,7 @@ def logger.connection_established() -> None:
 
 Signals that the connection has been successfully established.
 
-## <mark style="color:yellow;">def</mark> `logger.run_script()`
+### <mark style="color:yellow;">def</mark> `logger.run_script()`
 
 ```python
 def logger.run_script(script: str, name: Optional[str] = None) -> None:
@@ -136,7 +138,7 @@ def logger.run_script(script: str, name: Optional[str] = None) -> None:
 
 Prints the script file and name that is being executed next.
 
-## <mark style="color:yellow;">def</mark> `logger.print_operation_title()`
+### <mark style="color:yellow;">def</mark> `logger.print_operation_title()`
 
 ```python
 def logger.print_operation_title(op: Any, title_color: str, end: str = '\n'
@@ -145,7 +147,7 @@ def logger.print_operation_title(op: Any, title_color: str, end: str = '\n'
 
 Prints the operation title and description.
 
-## <mark style="color:yellow;">def</mark> `logger.print_operation_early()`
+### <mark style="color:yellow;">def</mark> `logger.print_operation_early()`
 
 ```python
 def logger.print_operation_early(op: Any) -> None:
@@ -153,7 +155,7 @@ def logger.print_operation_early(op: Any) -> None:
 
 Prints the operation title and description before the final status is known.
 
-## <mark style="color:yellow;">def</mark> `logger.decode_escape()`
+### <mark style="color:yellow;">def</mark> `logger.decode_escape()`
 
 ```python
 def logger.decode_escape(data: bytes, encoding: str = 'utf-8') -> str:
@@ -167,18 +169,18 @@ Example:
     >>> decode_escape(b'It is Wednesday\nmy dudes\r\n🐸\xff\0')
     'It is Wednesday\\nMy Dudes\\r\\n🐸\\xff\\0'
 
-### Parameters
+#### Parameters
 
  -  **content**: The content that should be decoded and escaped.
 
  -  **encoding**: The encoding that should be tried. To preserve utf-8 symbols, use 'utf-8',
     to replace any non-ascii character with an escape sequence use 'ascii'.
 
-### Returns
+#### Returns
 
  -  **str**: The decoded and escaped string.
 
-## <mark style="color:yellow;">def</mark> `logger.diff()`
+### <mark style="color:yellow;">def</mark> `logger.diff()`
 
 ```python
 def logger.diff(filename: str, old: Optional[bytes], new: Optional[bytes], 
@@ -206,7 +208,7 @@ your output should be made printable with a function such as [`logger.decode_esc
     line = logger.decode_escape(byteline)
     # Add coloring afterwards so ANSI escape sequences are not escaped
 
-### Parameters
+#### Parameters
 
  -  **filename**: The filename of the file that is being diffed.
 
@@ -216,11 +218,11 @@ your output should be made printable with a function such as [`logger.decode_esc
 
  -  **color**: Whether the output should be colored (with ANSI color sequences).
 
-### Returns
+#### Returns
 
  -  **list[str]**: The lines of the diff output. The individual lines will not have a terminating newline.
 
-## <mark style="color:yellow;">def</mark> `logger.print_operation()`
+### <mark style="color:yellow;">def</mark> `logger.print_operation()`
 
 ```python
 def logger.print_operation(op: Any, result: Any) -> None:

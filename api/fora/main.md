@@ -23,7 +23,9 @@ Raises an exception on error.
 
 An action that calls a function immediately when the argument is encountered.
 
-## <mark style="color:yellow;">def</mark> `main.main_run()`
+## Functions
+
+### <mark style="color:yellow;">def</mark> `main.main_run()`
 
 ```python
 def main.main_run(args: argparse.Namespace) -> None:
@@ -31,11 +33,11 @@ def main.main_run(args: argparse.Namespace) -> None:
 
 Main method used to run a script on an inventory.
 
-### Parameters
+#### Parameters
 
  -  **args**: The parsed arguments
 
-## <mark style="color:yellow;">def</mark> `main.show_inventory()`
+### <mark style="color:yellow;">def</mark> `main.show_inventory()`
 
 ```python
 def main.show_inventory(inventory: str) -> None:
@@ -43,11 +45,11 @@ def main.show_inventory(inventory: str) -> None:
 
 Display a summary of the given inventory.
 
-### Parameters
+#### Parameters
 
  -  **inventory**: The inventory argument
 
-## <mark style="color:yellow;">def</mark> `main.main()`
+### <mark style="color:yellow;">def</mark> `main.main()`
 
 ```python
 def main.main(argv: Optional[list[str]] = None) -> None:

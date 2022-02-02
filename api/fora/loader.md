@@ -48,7 +48,9 @@ def ImmediateInventory.available_groups(self) -> set[str]:
 
 An immediate inventory has no groups.
 
-## <mark style="color:yellow;">def</mark> `loader.load_inventory()`
+## Functions
+
+### <mark style="color:yellow;">def</mark> `loader.load_inventory()`
 
 ```python
 def loader.load_inventory(inventory_file_or_host_url: str) -> None:
@@ -57,16 +59,16 @@ def loader.load_inventory(inventory_file_or_host_url: str) -> None:
 Loads the global inventory from the given filename or single-host url
 and validates the definintions.
 
-### Parameters
+#### Parameters
 
  -  **inventory_file_or_host_url**: Either a single host url or an inventory module file (`*.py`). If a single host url
     is given without a connection schema (like `ssh://`), ssh will be used.
 
-### Raises
+#### Raises
 
  -  **FatalError**: The loaded inventory was invalid.
 
-## <mark style="color:yellow;">def</mark> `loader.run_script()`
+### <mark style="color:yellow;">def</mark> `loader.run_script()`
 
 ```python
 def loader.run_script(script: str, frame: inspect.FrameInfo, 
@@ -76,7 +78,7 @@ def loader.run_script(script: str, frame: inspect.FrameInfo,
 
 Loads and implicitly runs the given script by creating a new instance.
 
-### Parameters
+#### Parameters
 
  -  **script**: The path to the script that should be instanciated
 

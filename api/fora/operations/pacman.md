@@ -2,7 +2,9 @@
 
 Provides operations related to the pacman package manager.
 
-## <mark style="color:yellow;">def</mark> `pacman.package()`
+## Functions
+
+### <mark style="color:yellow;">def</mark> `pacman.package()`
 
 ```python
 def pacman.package(packages: list[str], present: bool = True, 
@@ -14,7 +16,7 @@ def pacman.package(packages: list[str], present: bool = True,
 
 Adds or removes system packages with pacman.
 
-### Parameters
+#### Parameters
 
  -  **packages**: The packages to modify.
 

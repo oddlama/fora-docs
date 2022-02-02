@@ -379,7 +379,9 @@ def PacketGetenv.handle(self, conn: Connection) -> None:
 
 Gets the requested environment variable.
 
-## <mark style="color:yellow;">def</mark> `tunnel_dispatcher.Packet()`
+## Functions
+
+### <mark style="color:yellow;">def</mark> `tunnel_dispatcher.Packet()`
 
 ```python
 def tunnel_dispatcher.Packet(type: str) -> Callable[[Type[Any]], Any]:
@@ -387,7 +389,7 @@ def tunnel_dispatcher.Packet(type: str) -> Callable[[Type[Any]], Any]:
 
 Decorator for packet types. Registers the packet and generates read and write methods.
 
-## <mark style="color:yellow;">def</mark> `tunnel_dispatcher.receive_packet()`
+### <mark style="color:yellow;">def</mark> `tunnel_dispatcher.receive_packet()`
 
 ```python
 def tunnel_dispatcher.receive_packet(conn: Connection, request: Any = None
@@ -396,17 +398,17 @@ def tunnel_dispatcher.receive_packet(conn: Connection, request: Any = None
 
 Receives the next packet from the given connection.
 
-### Parameters
+#### Parameters
 
  -  **conn**: The connection
 
  -  **request**: The corresponding request packet, if any.
 
-### Returns
+#### Returns
 
  -  **Any**: The received packet
 
-### Raises
+#### Raises
 
  -  **RemoteOSError**: An OSError occurred on the remote host.
 

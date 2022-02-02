@@ -2,7 +2,9 @@
 
 Provides operations related to the systemd init system.
 
-## <mark style="color:yellow;">def</mark> `systemd.daemon_reload()`
+## Functions
+
+### <mark style="color:yellow;">def</mark> `systemd.daemon_reload()`
 
 ```python
 def systemd.daemon_reload(user_mode: bool = False, 
@@ -13,7 +15,7 @@ def systemd.daemon_reload(user_mode: bool = False,
 
 Manages a systemd unit.
 
-### Parameters
+#### Parameters
 
  -  **user_mode**: Whether `systemctl --user` should be used to make user specific changes.
 
@@ -25,7 +27,7 @@ Manages a systemd unit.
 
  -  **op**: The operation wrapper. Must not be supplied by the user.
 
-## <mark style="color:yellow;">def</mark> `systemd.service()`
+### <mark style="color:yellow;">def</mark> `systemd.service()`
 
 ```python
 def systemd.service(service: str, state: Optional[str] = None, 
@@ -37,7 +39,7 @@ def systemd.service(service: str, state: Optional[str] = None,
 
 Manages a systemd unit.
 
-### Parameters
+#### Parameters
 
  -  **service**: The unit to manage.
 

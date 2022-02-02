@@ -2,7 +2,9 @@
 
 Provides operations related to creating and modifying files and directories.
 
-## <mark style="color:yellow;">def</mark> `files.directory()`
+## Functions
+
+### <mark style="color:yellow;">def</mark> `files.directory()`
 
 ```python
 def files.directory(path: str, present: bool = True, touch: bool = False, 
@@ -16,7 +18,7 @@ def files.directory(path: str, present: bool = True, touch: bool = False,
 Manages the state of an directory on the remote host.
 If the path already exists but isn't a directory, the operation will fail.
 
-### Parameters
+#### Parameters
 
  -  **path**: The directory path.
 
@@ -39,7 +41,7 @@ If the path already exists but isn't a directory, the operation will fail.
 
  -  **op**: The operation wrapper. Must not be supplied by the user.
 
-## <mark style="color:yellow;">def</mark> `files.file()`
+### <mark style="color:yellow;">def</mark> `files.file()`
 
 ```python
 def files.file(path: str, present: bool = True, touch: bool = False, 
@@ -52,7 +54,7 @@ def files.file(path: str, present: bool = True, touch: bool = False,
 
 Creates, deletes or updates the given file.
 
-### Parameters
+#### Parameters
 
  -  **path**: The remote file path.
 
@@ -75,7 +77,7 @@ Creates, deletes or updates the given file.
 
  -  **op**: The operation wrapper. Must not be supplied by the user.
 
-## <mark style="color:yellow;">def</mark> `files.link()`
+### <mark style="color:yellow;">def</mark> `files.link()`
 
 ```python
 def files.link(path: str, target: str, present: bool = True, 
@@ -88,7 +90,7 @@ def files.link(path: str, target: str, present: bool = True,
 
 Creates, deletes or updates the given symbolic link.
 
-### Parameters
+#### Parameters
 
  -  **path**: The path of the link.
 
@@ -111,7 +113,7 @@ Creates, deletes or updates the given symbolic link.
 
  -  **op**: The operation wrapper. Must not be supplied by the user.
 
-## <mark style="color:yellow;">def</mark> `files.upload_content()`
+### <mark style="color:yellow;">def</mark> `files.upload_content()`
 
 ```python
 def files.upload_content(content: Union[str, bytes], dest: str, 
@@ -125,7 +127,7 @@ def files.upload_content(content: Union[str, bytes], dest: str,
 
 Uploads the given content as a file to the remote host.
 
-### Parameters
+#### Parameters
 
  -  **content**: The content to upload.
 
@@ -145,7 +147,7 @@ Uploads the given content as a file to the remote host.
 
  -  **op**: The operation wrapper. Must not be supplied by the user.
 
-## <mark style="color:yellow;">def</mark> `files.upload()`
+### <mark style="color:yellow;">def</mark> `files.upload()`
 
 ```python
 def files.upload(src: str, dest: str, mode: Optional[str] = None, 
@@ -157,7 +159,7 @@ def files.upload(src: str, dest: str, mode: Optional[str] = None,
 
 Uploads the given file or to the remote host. Overwrites existing files.
 
-### Parameters
+#### Parameters
 
  -  **src**: The local file to upload.
 
@@ -177,7 +179,7 @@ Uploads the given file or to the remote host. Overwrites existing files.
 
  -  **op**: The operation wrapper. Must not be supplied by the user.
 
-## <mark style="color:yellow;">def</mark> `files.upload_dir()`
+### <mark style="color:yellow;">def</mark> `files.upload_dir()`
 
 ```python
 def files.upload_dir(src: str, dest: str, dir_mode: Optional[str] = None, 
@@ -214,7 +216,7 @@ No trailing slash will cause the folder to become the specified folder.
     └  myexample/
       └ something.conf
 
-### Parameters
+#### Parameters
 
  -  **src**: The local directory to upload.
 
@@ -231,7 +233,7 @@ No trailing slash will cause the folder to become the specified folder.
 
  -  **group**: The group for all files and directories. Uses the remote execution defaults if None.
 
-## <mark style="color:yellow;">def</mark> `files.template_content()`
+### <mark style="color:yellow;">def</mark> `files.template_content()`
 
 ```python
 def files.template_content(content: str, dest: str, 
@@ -247,7 +249,7 @@ def files.template_content(content: str, dest: str,
 Templates the given content and uploads the result to the remote host.
 See [`files.template()`](api/fora/operations/files.md#def-files.template) for more information about the available variables in the template.
 
-### Parameters
+#### Parameters
 
  -  **content**: The content to template.
 
@@ -269,7 +271,7 @@ See [`files.template()`](api/fora/operations/files.md#def-files.template) for mo
 
  -  **op**: The operation wrapper. Must not be supplied by the user.
 
-## <mark style="color:yellow;">def</mark> `files.template()`
+### <mark style="color:yellow;">def</mark> `files.template()`
 
 ```python
 def files.template(src: str, dest: str, context: Optional[dict] = None, 
@@ -289,7 +291,7 @@ The current host and inventory will always be added under the keys
 `"host"` and `"inventory"` respectively, shadowing other variables,
 to ensure these objects are always accessible.
 
-### Parameters
+#### Parameters
 
  -  **src**: The local file to template.
 
@@ -311,7 +313,7 @@ to ensure these objects are always accessible.
 
  -  **op**: The operation wrapper. Must not be supplied by the user.
 
-## <mark style="color:yellow;">def</mark> `files.line()`
+### <mark style="color:yellow;">def</mark> `files.line()`
 
 ```python
 def files.line(path: str, line: str, present: bool = True, 
@@ -325,7 +327,7 @@ def files.line(path: str, line: str, present: bool = True,
 Manage a line in a file. New lines will be added to the end of the file.
 If the file does not exist, it will be created with the current default file_mode, owner and group.
 
-### Parameters
+#### Parameters
 
  -  **path**: The file in question.
 

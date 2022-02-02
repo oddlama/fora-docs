@@ -2,7 +2,9 @@
 
 Provides operations related to the apt package manager.
 
-## <mark style="color:yellow;">def</mark> `apt.package()`
+## Functions
+
+### <mark style="color:yellow;">def</mark> `apt.package()`
 
 ```python
 def apt.package(packages: list[str], present: bool = True, 
@@ -14,7 +16,7 @@ def apt.package(packages: list[str], present: bool = True,
 
 Adds or removes system packages with apt-get.
 
-### Parameters
+#### Parameters
 
  -  **packages**: The packages to modify.
 

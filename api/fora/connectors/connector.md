@@ -466,7 +466,9 @@ Extracts the hostname from a given url where the schema matches this connector.
 
  -  **ValueError**: The provided url was invalid.
 
-## <mark style="color:yellow;">def</mark> `connector.connector()`
+## Functions
+
+### <mark style="color:yellow;">def</mark> `connector.connector()`
 
 ```python
 def connector.connector(schema: str
@@ -476,6 +478,6 @@ def connector.connector(schema: str
 The @connector class decorator used to register the connector
 to the global registry.
 
-### Parameters
+#### Parameters
 
  -  **schema**: The schema for the connector, for example 'ssh'.

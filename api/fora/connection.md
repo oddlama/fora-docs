@@ -165,7 +165,9 @@ def Connection.getenv(self, key: str, default: Optional[str] = None
 
 See [`Connector.getenv()`](api/fora/connectors/connector.md#def-Connector.getenv), but returns the given default in case the key doesn't exist.
 
-## <mark style="color:yellow;">def</mark> `connection.open_connection()`
+## Functions
+
+### <mark style="color:yellow;">def</mark> `connection.open_connection()`
 
 ```python
 def connection.open_connection(host: HostWrapper) -> Connection:
@@ -175,10 +177,10 @@ Returns a connection (context manager) that opens the connection when it is ente
 closes it when it is exited. The connection can be obtained via host.connection,
 as long as it is opened.
 
-### Parameters
+#### Parameters
 
  -  **host**: The host to which a connection should be opened
 
-### Returns
+#### Returns
 
  -  **Connection**: The connection (context manager)

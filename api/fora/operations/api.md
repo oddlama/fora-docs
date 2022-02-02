@@ -207,7 +207,9 @@ Returns a successful operation result.
 
  -  **OperationResult**: The OperationResult for this successful operation.
 
-## <mark style="color:yellow;">def</mark> `api.operation()`
+## Functions
+
+### <mark style="color:yellow;">def</mark> `api.operation()`
 
 ```python
 def api.operation(op_name: str):

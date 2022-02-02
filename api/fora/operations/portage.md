@@ -2,7 +2,9 @@
 
 Provides operations related to the portage package manager.
 
-## <mark style="color:yellow;">def</mark> `portage.package()`
+## Functions
+
+### <mark style="color:yellow;">def</mark> `portage.package()`
 
 ```python
 def portage.package(packages: list[str], present: bool = True, 
@@ -14,7 +16,7 @@ def portage.package(packages: list[str], present: bool = True,
 
 Adds or removes system packages with portage.
 
-### Parameters
+#### Parameters
 
  -  **packages**: The packages to modify.
 
