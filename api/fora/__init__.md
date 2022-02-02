@@ -17,11 +17,11 @@ The main module of fora.
  -  [`fora.main`](api/fora/main.md) ‒ Provides the top-level logic of fora such as
     the CLI interface and main script dispatching.
 
- -  [`fora.remote\_settings`](api/fora/remote\_settings.md) ‒ Provides a class that represents execution defaults for a remote host.
+ -  [`fora.remote_settings`](api/fora/remote\_settings.md) ‒ Provides a class that represents execution defaults for a remote host.
 
  -  [`fora.loader`](api/fora/loader.md) ‒ Provides the dynamic module loading utilities.
 
- -  [`fora.inventory\_wrapper`](api/fora/inventory\_wrapper.md) ‒ Provides the inventory wrapper for all inventory related functionality.
+ -  [`fora.inventory_wrapper`](api/fora/inventory\_wrapper.md) ‒ Provides the inventory wrapper for all inventory related functionality.
 
  -  [`fora.connection`](api/fora/connection.md) ‒ Provides a class to manage a remote connection via the host's connector.
 
@@ -29,7 +29,7 @@ The main module of fora.
 
  -  [`fora.logger`](api/fora/logger.md) ‒ Provides logging utilities.
 
- -  [`fora.example\_deploys`](api/fora/example\_deploys.md) ‒ Provides example deploys, which can be used as a starting point.
+ -  [`fora.example_deploys`](api/fora/example\_deploys.md) ‒ Provides example deploys, which can be used as a starting point.
 
 ## Attributes
 

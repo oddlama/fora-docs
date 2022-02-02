@@ -47,7 +47,7 @@ See [`Connector.run()`](api/fora/connectors/connector.md#def-Connector.run).
 def Connection.resolve_user(self, user: Optional[str]) -> str:
 ```
 
-See [`Connector.resolve\_user()`](api/fora/connectors/connector.md#def-Connector.resolve\_user).
+See [`Connector.resolve_user()`](api/fora/connectors/connector.md#def-Connector.resolve\_user).
 
 ### <mark style="color:yellow;">def</mark> `Connection.resolve_group()`
 
@@ -55,7 +55,7 @@ See [`Connector.resolve\_user()`](api/fora/connectors/connector.md#def-Connector
 def Connection.resolve_group(self, group: Optional[str]) -> str:
 ```
 
-See [`Connector.resolve\_group()`](api/fora/connectors/connector.md#def-Connector.resolve\_group).
+See [`Connector.resolve_group()`](api/fora/connectors/connector.md#def-Connector.resolve\_group).
 
 ### <mark style="color:yellow;">def</mark> `Connection.stat()`
 
@@ -119,7 +119,7 @@ def Connection.query_user(self, user: str,
                           ) -> Optional[UserEntry]:
 ```
 
-See [`Connector.query\_user()`](api/fora/connectors/connector.md#def-Connector.query\_user), but returns the given default in case the user doesn't exist.
+See [`Connector.query_user()`](api/fora/connectors/connector.md#def-Connector.query\_user), but returns the given default in case the user doesn't exist.
 
 ### <mark style="color:yellow;">def</mark> `Connection.query_group()`
 
@@ -129,7 +129,7 @@ def Connection.query_group(self, group: str,
                            ) -> Optional[GroupEntry]:
 ```
 
-See [`Connector.query\_group()`](api/fora/connectors/connector.md#def-Connector.query\_group), but returns the given default in case the group doesn't exist.
+See [`Connector.query_group()`](api/fora/connectors/connector.md#def-Connector.query\_group), but returns the given default in case the group doesn't exist.
 
 ### <mark style="color:yellow;">def</mark> `Connection.home_dir()`
 
