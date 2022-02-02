@@ -1,10 +1,10 @@
-# operations.api
+# fora.operations.api
 
 Provides API to define operations.
 
 ## <mark style="color:red;">class</mark> `api.OperationError`
 
-An [exception ](git.md#def-git.repo)that indicates an error while executing an operation.
+An exception that indicates an error while executing an operation.
 
 ## <mark style="color:red;">class</mark> `api.OperationResult`
 
@@ -72,11 +72,13 @@ operation's op variable is defaulted to this value to indicate that it must not 
 def Operation.nested(self, has_nested: bool) -> None:
 ```
 
-Sets whet this operation spawns nested operations. In this case, this operation will not have separate state, and the printing will be handled differently.
+Sets whet this operation spawns nested operations. In this case,
+this operation will not have separate state, and the printing will be
+handled differently.
 
 #### Parameters
 
-* **has\_nested**: Whether the operation has nested operations.
+ -  **has_nested**: Whether the operation has nested operations.
 
 ### <mark style="color:yellow;">def</mark> `Operation.add_nested_result()`
 
@@ -85,12 +87,14 @@ def Operation.add_nested_result(self, key: str, result: OperationResult
                                 ) -> None:
 ```
 
-Adds initial and final state of a nested operation under the given key into this operation's state dictionaries.
+Adds initial and final state of a nested operation under the given key
+into this operation's state dictionaries.
 
 #### Parameters
 
-* **key**: The key under which to add the nested result.
-* **result**: The result to add.
+ -  **key**: The key under which to add the nested result.
+
+ -  **result**: The result to add.
 
 ### <mark style="color:yellow;">def</mark> `Operation.desc()`
 
@@ -98,11 +102,12 @@ Adds initial and final state of a nested operation under the given key into this
 def Operation.desc(self, description: str) -> None:
 ```
 
-Sets the description of the operation, and prints an early status via the logger.
+Sets the description of the operation, and prints an
+early status via the logger.
 
 #### Parameters
 
-* **description**: The new description.
+ -  **description**: The new description.
 
 ### <mark style="color:yellow;">def</mark> `Operation.defaults()`
 
@@ -111,7 +116,7 @@ def Operation.defaults(self, *args: Any, **kwargs: Any
                        ) -> RemoteDefaultsContext:
 ```
 
-Sets defaults on the current script. See [`ScriptWrapper.defaults()`](api/fora/types.md#def-ScriptWrapper.defaults).
+Sets defaults on the current script. See [`ScriptWrapper.defaults()`](types.md#def-ScriptWrapper.defaults).
 
 ### <mark style="color:yellow;">def</mark> `Operation.initial_state()`
 
@@ -139,11 +144,11 @@ Checks whether the initial and final states differ.
 
 #### Parameters
 
-* **ignore\_none**: Set to `True` to not count states where the final value is None.
+ -  **ignore_none**: Set to `True` to not count states where the final value is None.
 
 #### Returns
 
-* **bool**: Whether the states differ.
+ -  **bool**: Whether the states differ.
 
 ### <mark style="color:yellow;">def</mark> `Operation.changed()`
 
@@ -155,11 +160,11 @@ Checks whether a specific key will change.
 
 #### Parameters
 
-* **key**: The key to check for changes.
+ -  **key**: The key to check for changes.
 
 #### Returns
 
-* **bool**: Whether the states differ.
+ -  **bool**: Whether the states differ.
 
 ### <mark style="color:yellow;">def</mark> `Operation.diff()`
 
@@ -172,9 +177,11 @@ Adds a file to the diffing output.
 
 #### Parameters
 
-* **file**: The filename which the diff belongs to.
-* **old**: The previous content or None if the file didn't exist previously.
-* **new**: The new content or None if the file was deleted.
+ -  **file**: The filename which the diff belongs to.
+
+ -  **old**: The previous content or None if the file didn't exist previously.
+
+ -  **new**: The new content or None if the file was deleted.
 
 ### <mark style="color:yellow;">def</mark> `Operation.failure()`
 
@@ -186,7 +193,7 @@ Returns a failed operation result.
 
 #### Returns
 
-* **OperationResult**: The OperationResult for this failed operation.
+ -  **OperationResult**: The OperationResult for this failed operation.
 
 ### <mark style="color:yellow;">def</mark> `Operation.success()`
 
@@ -198,7 +205,7 @@ Returns a successful operation result.
 
 #### Returns
 
-* **OperationResult**: The OperationResult for this successful operation.
+ -  **OperationResult**: The OperationResult for this successful operation.
 
 ## Functions
 

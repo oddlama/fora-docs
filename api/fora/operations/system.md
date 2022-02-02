@@ -22,7 +22,7 @@ def system.user(user: str, present: bool = True, uid: Optional[int] = None,
 Creates, modifies or deletes a unix user.
 
 The home directory for the given user will never be created.
-Use [`files.directory()`](api/fora/operations/files.md#def-files.directory) to do this.
+Use [`files.directory()`](files.md#def-files.directory) to do this.
 
 When a user is deleted, it's primary group will also be deleted if no other user
 has the same primary group. This is a quirk of the `userdel` tool, and applies when

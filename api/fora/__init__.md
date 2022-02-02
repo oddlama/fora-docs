@@ -4,32 +4,32 @@ The main module of fora.
 
 ## Subpackages
 
- -  [`fora.connectors`](api/fora/connectors/\_\_init\_\_.md) ‒ Contains all standard conectors to register them by default.
+ -  [`fora.connectors`](connectors/\_\_init\_\_.md) ‒ Contains all standard conectors to register them by default.
 
- -  [`fora.operations`](api/fora/operations/\_\_init\_\_.md) ‒ This package contains all standard operation modules.
+ -  [`fora.operations`](operations/\_\_init\_\_.md) ‒ This package contains all standard operation modules.
 
 ## Submodules
 
- -  [`fora.utils`](api/fora/utils.md) ‒ Provides utility functions.
+ -  [`fora.utils`](utils.md) ‒ Provides utility functions.
 
- -  [`fora.version`](api/fora/version.md) ‒ *No description.*
+ -  [`fora.version`](version.md) ‒ *No description.*
 
- -  [`fora.main`](api/fora/main.md) ‒ Provides the top-level logic of fora such as
+ -  [`fora.main`](main.md) ‒ Provides the top-level logic of fora such as
     the CLI interface and main script dispatching.
 
- -  [`fora.remote_settings`](api/fora/remote\_settings.md) ‒ Provides a class that represents execution defaults for a remote host.
+ -  [`fora.remote_settings`](remote\_settings.md) ‒ Provides a class that represents execution defaults for a remote host.
 
- -  [`fora.loader`](api/fora/loader.md) ‒ Provides the dynamic module loading utilities.
+ -  [`fora.loader`](loader.md) ‒ Provides the dynamic module loading utilities.
 
- -  [`fora.inventory_wrapper`](api/fora/inventory\_wrapper.md) ‒ Provides the inventory wrapper for all inventory related functionality.
+ -  [`fora.inventory_wrapper`](inventory\_wrapper.md) ‒ Provides the inventory wrapper for all inventory related functionality.
 
- -  [`fora.connection`](api/fora/connection.md) ‒ Provides a class to manage a remote connection via the host's connector.
+ -  [`fora.connection`](connection.md) ‒ Provides a class to manage a remote connection via the host's connector.
 
- -  [`fora.types`](api/fora/types.md) ‒ Provides a mockup of loadable module types.
+ -  [`fora.types`](types.md) ‒ Provides a mockup of loadable module types.
 
- -  [`fora.logger`](api/fora/logger.md) ‒ Provides logging utilities.
+ -  [`fora.logger`](logger.md) ‒ Provides logging utilities.
 
- -  [`fora.example_deploys`](api/fora/example\_deploys.md) ‒ Provides example deploys, which can be used as a starting point.
+ -  [`fora.example_deploys`](example\_deploys.md) ‒ Provides example deploys, which can be used as a starting point.
 
 ## Attributes
 

@@ -39,7 +39,7 @@ def Connection.run(self, command: list[str], input: Optional[bytes] = None,
                    ) -> CompletedRemoteCommand:
 ```
 
-See [`Connector.run()`](api/fora/connectors/connector.md#def-Connector.run).
+See [`Connector.run()`](connectors/connector.md#def-Connector.run).
 
 ### <mark style="color:yellow;">def</mark> `Connection.resolve_user()`
 
@@ -47,7 +47,7 @@ See [`Connector.run()`](api/fora/connectors/connector.md#def-Connector.run).
 def Connection.resolve_user(self, user: Optional[str]) -> str:
 ```
 
-See [`Connector.resolve_user()`](api/fora/connectors/connector.md#def-Connector.resolve\_user).
+See [`Connector.resolve_user()`](connectors/connector.md#def-Connector.resolve\_user).
 
 ### <mark style="color:yellow;">def</mark> `Connection.resolve_group()`
 
@@ -55,7 +55,7 @@ See [`Connector.resolve_user()`](api/fora/connectors/connector.md#def-Connector.
 def Connection.resolve_group(self, group: Optional[str]) -> str:
 ```
 
-See [`Connector.resolve_group()`](api/fora/connectors/connector.md#def-Connector.resolve\_group).
+See [`Connector.resolve_group()`](connectors/connector.md#def-Connector.resolve\_group).
 
 ### <mark style="color:yellow;">def</mark> `Connection.stat()`
 
@@ -64,7 +64,7 @@ def Connection.stat(self, path: str, follow_links: bool = False,
                     sha512sum: bool = False) -> Optional[StatResult]:
 ```
 
-See [`Connector.stat()`](api/fora/connectors/connector.md#def-Connector.stat).
+See [`Connector.stat()`](connectors/connector.md#def-Connector.stat).
 
 ### <mark style="color:yellow;">def</mark> `Connection.upload()`
 
@@ -75,7 +75,7 @@ def Connection.upload(self, file: str, content: bytes,
                       group: Optional[str] = None) -> None:
 ```
 
-See [`Connector.upload()`](api/fora/connectors/connector.md#def-Connector.upload).
+See [`Connector.upload()`](connectors/connector.md#def-Connector.upload).
 
 ### <mark style="color:yellow;">def</mark> `Connection.download()`
 
@@ -83,7 +83,7 @@ See [`Connector.upload()`](api/fora/connectors/connector.md#def-Connector.upload
 def Connection.download(self, file: str) -> bytes:
 ```
 
-See [`Connector.download()`](api/fora/connectors/connector.md#def-Connector.download).
+See [`Connector.download()`](connectors/connector.md#def-Connector.download).
 
 ### <mark style="color:yellow;">def</mark> `Connection.download_or()`
 
@@ -92,7 +92,7 @@ def Connection.download_or(self, file: str, default: Optional[bytes] = None
                            ) -> Optional[bytes]:
 ```
 
-Same as [`Connection.download()`](api/fora/connection.md#def-Connection.download), but returns the given default in case the file doesn't exist.
+Same as [`Connection.download()`](#def-Connection.download), but returns the given default in case the file doesn't exist.
 
 #### Parameters
 
@@ -119,7 +119,7 @@ def Connection.query_user(self, user: str,
                           ) -> Optional[UserEntry]:
 ```
 
-See [`Connector.query_user()`](api/fora/connectors/connector.md#def-Connector.query\_user), but returns the given default in case the user doesn't exist.
+See [`Connector.query_user()`](connectors/connector.md#def-Connector.query\_user), but returns the given default in case the user doesn't exist.
 
 ### <mark style="color:yellow;">def</mark> `Connection.query_group()`
 
@@ -129,7 +129,7 @@ def Connection.query_group(self, group: str,
                            ) -> Optional[GroupEntry]:
 ```
 
-See [`Connector.query_group()`](api/fora/connectors/connector.md#def-Connector.query\_group), but returns the given default in case the group doesn't exist.
+See [`Connector.query_group()`](connectors/connector.md#def-Connector.query\_group), but returns the given default in case the group doesn't exist.
 
 ### <mark style="color:yellow;">def</mark> `Connection.home_dir()`
 
@@ -163,7 +163,7 @@ def Connection.getenv(self, key: str, default: Optional[str] = None
                       ) -> Optional[str]:
 ```
 
-See [`Connector.getenv()`](api/fora/connectors/connector.md#def-Connector.getenv), but returns the given default in case the key doesn't exist.
+See [`Connector.getenv()`](connectors/connector.md#def-Connector.getenv), but returns the given default in case the key doesn't exist.
 
 ## Functions
 
