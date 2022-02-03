@@ -2,7 +2,7 @@
 
 ## What is Fora?
 
-Fora is an infrastructure and configuration management tool inspired by [Ansible](https://www.ansible.com) and [pyinfa](https://pyinfra.com).
+Fora is an infrastructure and configuration management tool inspired by [Ansible](https://www.ansible.com) and [pyinfra](https://pyinfra.com).
 Yet, it implements a drastically different approach to inventory management (and some other aspects), when compared to these well-known tools.
 See [how it differs](outlining-the-differences.md#how-is-fora-different-from-existing-tools) for more details.
 
