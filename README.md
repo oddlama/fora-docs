@@ -14,7 +14,7 @@ You can install Fora with pip:
 pip install fora
 ```
 
-Afterwards, you can use it to write scripts that can run operation or commands on a remote host.
+Afterwards, you can use it to write scripts which will be used to run operations or commands on a remote host.
 
 {% tabs %}
 {% tab title="deploy.py" %}
