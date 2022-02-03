@@ -50,3 +50,7 @@
 
 * [Managing dotfiles](examples/dotfiles.md)
 * [Using secrets](examples/using-secrets.md)
+
+## Links
+
+* [Fora on GitHub](https://github.com/oddlama/fora)
